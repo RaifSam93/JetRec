@@ -1,0 +1,4405 @@
+2016-08-04 Teng Jian Khoo <khoo@cern.ch>
+	* python/JetRecStandardTools.py: Add WeightPFOTool
+
+2016-08-01    Teng Jian Khoo <khoo@cern.ch>
+	M       python/JetAlgorithm.py
+	* Bugfix separate jet algs
+	M       python/JetToolSupport.py
+	* Fix truth and track association
+	* Splitting off largeR mods
+	* Timing fixes
+	M       python/JetRecStandardTools.py
+	* Fix label for EMTopo getter
+	* Switch off akt3 track association
+	M       python/JetRecStandardToolManager.py
+	* Cleaning up small-R modifiers
+	M       Root/JetRecTool.cxx
+	* Fix memory leak
+	M       share/JetRec_jobOptions.py
+	* Fix timing
+	* Turn off unwanted jet collections
+	* tagging JetRec-03-00-80
+
+2016-07-22    <delsart@lpsc1120x.in2p3.fr>
+
+	* Root/JetRecTool.cxx : previous tag missed implementation of
+	setInputJetContainer. Now added.
+	* tagging JetRec-03-00-79
+
+	* JetRecTool.h/cxx : make trimming/grooming compatible with
+	trigger by adding a setInputJetContainer() method and using it
+	when m_trigger&m_goom.
+	* Tagging JetRec-03-00-78
+
+
+2016-06-23    <delsart@lpsc1120x.in2p3.fr>
+
+	* Tagging JetRec-03-00-77
+	* JetRec/selection.xml, JetRecDict.h: added
+	* Root/LinkDef.h: added
+
+2016-06-03  scott snyder  <snyder@bnl.gov>
+
+	* Tagging JetRec-03-00-76.
+	* Comply with ATLAS naming conventions.
+
+	* Tagging JetRec-03-00-75.
+	* python/JetRecUtils.py: Fix a couple missing commas.
+
+2016-06-02    <delsart@lpsc1120x.in2p3.fr>
+
+	* python/JetRecStandardToolManager.py: remove old jet origin
+	correction (un-needed since now using origin corrected clusters).
+	* Tagging as JetRec-03-00-74
+
+2016-06-02    Teng Jian Khoo <khoo@cern.ch>
+	* Switch to newer ParticleJetTools
+	* Tagging as JetRec-03-00-72
+	* Switch off origin correction when using corrected clusters
+	* Remove duplicate ECPSFrac tool
+	* Tagging as JetRec-03-00-73
+
+2016-05-31    Teng Jian Khoo <khoo@cern.ch>
+	* Erroneous tag JetRec-03-00-70
+	* Porting forwards changes from 20.1 and 20.7 T0/derivationbranches
+M       python/JetRecFlags.py
+M       python/JetRecStandard.py
+M       python/JetRecUtils.py
+M       python/JetToolSupport.py
+M       python/JetRecStandardTools.py
+M       python/JetRecStandardToolManager.py
+M       Root/JetRecTool.cxx
+M       JetRec/JetRecTool.h
+M       JetRec/PseudoJetGetter.h
+	* ATLJETMET-560
+	* Tagging as JetRec-03-00-71
+M       python/JetRecStandardTools.py
+	* CopyTruthJetParticles config changes to fix TruthWZJets
+
+2016-05-31    <delsart@lpsc1120x.in2p3.fr>
+
+	* many changes below to enable the constituent modifiers in reco.
+	* for now running the origin correction on EM and LC clusters.
+M       python/JetAlgorithm.py
+M       python/JetRecFlags.py
+M       python/JetRecUtils.py
+M       python/JetToolSupport.py
+M       python/JetRecStandardTools.py
+M       python/JetRecStandardToolManager.py
+?       cmt/version.cmt
+M       share/JetRec_jobOptions.py
+	* ATLASRECTS-2820
+	* Tagging as JetRec-03-00-69
+
+2016-04-28 James Frost <james.frost AT cern.ch
+	* Migrate updates from -39- (20.1/20.7 Tier-0 branch)
+	* python/JetRecStandardTools.py : lower ghost scale factor to 1e-40
+	* ATLJETMET-461
+	* python/JetRecStandardTools.py: Migrate main track selection (trackselloose) to exact IDLoose configuration
+	* ATLJETMET-456
+
+2016-04-16 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Creating a new tag, which would hold a proper CMakeLists.txt
+	  file.
+	* Removed the executable flag from a few jobOptions that didn't
+	  need it.
+	* I only had to modify the requirements file in order to be able
+	  to upload the modifications for the CMakeLists.txt file.
+	* Tagging as JetRec-03-00-68
+
+2016-03-22    Johannes Elmsheuser
+	* python/DefaultTools.py : New configuration module for JetRecConfig
+        * ATLJETMET-511
+	* Tag JetRec-03-00-67
+
+2016-02-06    <delsart@lpsc1120x.in2p3.fr>
+	* ATLJETMET-200
+	* JetRec/PseudoJetGetter.h : fix initial implementation.
+	* tag as JetRec-03-00-66
+
+2016-02-04    <delsart@lpsc1120x.in2p3.fr>
+	* ATLJETMET-200
+	* JetRec/PseudoJetGetter.h/cxx : implement the
+	TreatNegativeEnergyAGhost option for HI. 
+	* tag JetRec-03-00-65
+
+2016-01-22 James Frost <james.frost AT cern.ch>
+	* python/JetToolSupport.py - fix bug in updated method of loading b-tagging
+	* discussed in ATLASRECTS-2640 and ATLASDQ-362
+	* tag as JetRec-03-00-64
+
+2016-01-22 James Frost
+	* python/JetRecStandardTools.py - add JetTrackSumMomentsTool to Tier-0 configuration (note, needs JetMomentTools-00-03-31 or higher)	
+	* python/JetRecStandardToolManager.py - Add JetTrackSumMomentsTool to default ungroomed modifiers in JetRec
+	* tag as JetRec-03-00-63
+
+2015-11-18 Mark Hodgkinson
+	* python/JetRecFlags.py, python/JetRecStandardTools.py: Update to add option to use track-vertex association tool in PFO jet finding
+	* ATLJETMET-442
+	* JetRec-03-00-62 
+	
+2015-10-01 Mark Hodgkinson
+	* python/JetRecStandardTools.py, share/pflowjets.py: Update to set chargedWeights variable for pflow jets
+	* JetRec-03-00-61	
+
+2015-09-30 Mark Hodgkinson
+	* python/JetRecStandardToolManager.py: Add muon segments to pflow jets, needed for GSC
+	* share/ pflowjets.log.clean.ref : Update for above change
+	* ATLJETMET-436
+	* JetRec-03-00-60
+
+2015-08-11 Mark Hodgkinson
+	* cmt/Makefile.Rootcore - change method to link variableR plugin as suggested by F. Rubbo
+	* JetRec-03-00-59
+	
+2015-08-6 Mark Hodgkinson
+	* python/JetToolSupport.py - change method of loading b-tagging
+	* ATLASDQ-362
+	* JetRec-03-00-58
+	
+2015-07-30 Mark Hodgkinson
+	* Update many test log files to reflect change in JetCalibTools version
+	* JetRec-03-00-57
+
+2015-07-24 Mark Hodgkinson
+	* Update all test log files to reflect changes in package versions in log files (we need to update cleaning to strip these out of log filessoon)
+	* JetRec-03-00-56
+
+2015-07-20 Mark Hodgkinson
+	* Update test_RunJetRec log file to reflect changes in truthWZ jets, centroidR
+	* Update all other test log files to reflect change in name of JetCalibArea  (requires JetCalibTools-00-04-48)
+	* JetRec-03-00-55
+	
+2015-07-08 Mark Hodgkinson
+	* Update test log files - myjets, cpjets, pflowjets, trimjets, reclusterjets, reclusteroldjets, vrjets, splitjets
+	* Other test log files have not understood changes and are not yet updated
+	* The updated log files depend on using JetCalibTools-00-04-44, which has a bug fix
+	* JetRec-03-00-54
+
+2015-06-30    <delsart@localhost>
+	* ATLJETMET-400	
+	* Root/JetTrimmer.cxx: add NTrimSubjets attribute
+	* JetRec-03-00-53
+
+2015-06-17    <delsart@localhost>
+	* JetRec-03-00-52
+	* ATLJETMET-391.
+	* python/JetRecStandardTools.py: use MCTruthClassifier to build
+	input jets.
+	
+
+2015-06-15 David Adams
+	* ATLJETMET-276
+	* share/splitjets.py: Add this test of jet splitting.
+	  Trying to observe the problem reported in ATLJETMET-276.
+	* Reference for the above test.
+
+2015-06-11 Mark Hodgkinson
+	* JetRec-03-00-51
+	* ATLJETMET-386
+	* python/JetRecCalibrationFinder - remove EMFlip logic, which is not needed for JetCalibTools-00-04-041
+	* python/JetRecStandardTools - correct buggy configuration of JetClusterMomentTool ("do"->"Do")
+
+2015-06-02 David Adams
+	* JetRec-03-00-50
+	* ATLJETMET-377
+	* JetDumper: Add list of char bool attributes.
+	* share/test_RunjetRec.py: Dump BDRS as cboool instead of bool.
+	* share/*.re: Update.
+
+2015-05-29 Mark Hodgkinson
+	* Change BDRS attribute	to char	(from bool) in Root/JetSpliiter.cxx
+	* ATLJETMET-377	
+
+2015-05-27 David Adams
+	* JetRec-03-00-49
+	* ATLJETMET-338
+	* Root/JetRecTool.cxx: Add initialization of the input type to Uncategorized.
+	* python/JetRecStandardToolManager.py: Drop use of ecpsfrac for pflow jets.
+	* share/pflowjets.py: Stop showing moments (until ecpsfrac works for pflow).
+	* share/*.ref: Update.
+
+2015-05-28 Jakub Cuth
+	* JetRec-03-00-48
+	* ATLJETMET-337, ATLJETMET-38
+	* python/JetRecStandardToolManager.py: added switch for
+	JetClusterMomentsTool. Turn all moments on.
+	* python/JetRecStandardToolManager.py: added setup for
+	JetVoronoiMomentsTool. Not added to modifiers.
+
+2015-05-27 David Adams
+	* JetRec-03-00-47
+	* ATLJETMET-369, ATLJETMET-175
+	* Root/JetRecTool.cxx: Code optimization.
+	* python/JetRecStandardToolManager.py: Ensure jetens is run before
+	  calibration.
+	* share/test_RunJetRec.log.clean.ref: Update for the move of jetens.
+
+2015-05-26 David Adams
+	* JetRec-03-00-46
+	* ATLJETMET-335
+	* Root/JetRecTool.cxx: Fix links for shallow copies.
+	* cmt/requirements: Add dep for the above.
+
+2015-05-26 David Adams
+	* JetRec-03-00-45
+	* ATLJETMET-369
+	* Root/JetRecTool.cxx: Update to update existing container if copy
+	  is done with the same input and output container names.
+	* share/cpjets.py: Add test of this update.
+	* share/cpjets.log.clean.ref: Update for the mod here.
+
+2015-05-22 David Adams
+	* JetRec-03-00-44
+	* ATLJETMET-338
+	* test_RunJetRec.log.clean.ref: Update (for trivial change).
+
+2015-05-22 David Adams
+	* JetRec-03-00-43
+	* ATLJETMET-338
+	* share/test_RunJetRec.py: Add dump of ECPSFraction.
+	* share/pflowjets.py: Add dump of some float moments including
+	  ECPSFraction.
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2015-05-19 Mark Hodgkinson
+	* JetRec-03-00-42
+	* ATLJETMET-360
+	* python/JetRecUtils.py: Update retrieveAODList to NOT add any container with "HLT" in the name.
+
+2015-05-14 David Adams
+	* JetRec-03-00-41
+	* ATLJETMET-354
+	* python/JetAlgorithm.py: Add loose track selection.
+	* python/JetRecStandardTools.py: Switch to loose track selection.
+	  Add ecpsfrac. Add tensor moments to pull.
+	* python/JetRecStandardToolManager.py: Add epscfrac.
+	* share/test_RunJetRec.py: Split line to no effect.
+	* share/*.ref: Update.
+
+2015-04-29 Jakub Cuth
+	* ATLJETMET-195
+	* test_RunJetRec.py: dump leading cluster pt
+
+2015-04-23 Mark Hodgkinson
+	* JetRec-03-00-41
+	* ATLJETMET-335
+	* This tag allows us to bypass usage of tags 39 and 40 (from the trunk)  which correspond to the branches 39-branch and 40-branch
+
+2015-04-22 Mark Hodgkinson
+	* JetRec-03-00-38
+	* ATLJETMET-333
+	* Update all track jets to use new track selector tool instance, which uses official loose track selection
+
+2015-04-13 David Adams
+	* JetRec-03-00-37
+	* ATLASRECTS-1960
+	* python/JetRecFlags.py: Change default for jetFlags.doPFlow.statusOn
+	  to False.
+	* python/JetRecStandardToolManager.py: Set jetFlags.doPFlow.statusOn
+	  to True.
+	* python/JetRecStandard.py: Set jetFlags.doPFlow = jetFlags.useTracks
+	  if jetFlags.doPFlow.statusOn is False.
+
+2015-04-10 David Adams
+	* JetRec-03-00-36
+	* ATLJETMET-323
+	* python/JetRecStandardTools.py: Lower cone-labeling jet-pT threhold
+	  from 10 GeV to zero for non-track jets.
+	* share/test_RunJetRec.log.clean.ref, share/pflowjets.log.clean.ref,
+	  rdotoesd/*.ref: Update for above change.
+
+2015-04-01 David Adams
+	* JetRec-03-00-35
+	* ATLJETMET-274, ATLJETMET-305
+	* Root/JetFromPseudojet.cxx: Change threshold for acceptable negative
+	  mass jets from p/E-1 > -1e-15 to -1e-6.
+	* share/test_RunJetRec.log.clean.ref: Update for JVF change in
+	  previous tag.
+
+2015-04-01 David Adams
+	* JetRec-03-00-34
+	* ATLJETMET-305
+	* python/JetRecStandardTools.py: Rename tool jvf to jvfold and change its
+	  moment base name fro JVF to JVFold. Rename tool jvfloose to jvf and
+	  change its base name from JVfLoos to JVF.
+	* python/JetRecStandardToolManager.py: Drop use of tool jvfloose.
+	* rdotoesd/*.ref: Update for JVF changes.
+	* share/test_RunJetRec.py: Update to test new JVF only.
+	* share/test_RunJetRec.log.clean.ref: Update for new JVF.
+	* share/pflowjets.log.clean.ref: Update for new JVF.
+
+2015-04-01 David Adams
+	* JetRec-03-00-33
+	* ATLJETMET-311
+	* python/JetRecStandardTools.py: Add ghost pseudojet builder gakt2trackget.
+	* python/JetRecStandardToolManager.py: Add gakt2trackget to the
+	* share/test_RunJetRec.py: Add dump of AntiKtJet matching info.
+	  pseudojet getter lists for calo and pflow jets.
+	* share/test_RunJetRec.log.clean.ref: Update for new info.
+	* share/pflowjets.py: Switch to input file which has AntiKt2 trackjets.
+	* share/test_pflowjets.log.clean.ref: Update for new input file.
+	* trigger/go: Update so fields "TRT_ERROR" and "INFO TOTAL ERRORS"
+	  do not trigger ERROR warning.
+
+2015-03-25 David Adams
+	* JetRec-03-00-32
+	* ATLASRECTS-1729
+	* python/JetRecStandard.py: Use tracks in RecExCommon reco only if
+	  vertices are present or sceduled to be found.
+
+2015-03-25 David Adams
+	* JetRec-03-00-31
+	* ATLJETMET-192, ATLJETMET-283, ATLJETMET-305
+	* share/test_RunJetRec.py: Check JVFLoose always.
+	* share/RunJetRec.py: Drop option to enable JVFLoose.
+	* share/*.ref: Update (after checking).
+	* rdotoesd/*.ref: Update (after checking).
+
+2015-03-24 Mark Hodgkinson
+	* JetRec-03-00-30
+	* ATLJETMET-304
+	* python/JetRecStandardToolManager.py: Add jvfloose to list of track modifiers
+
+2015-03-19 David Adams
+	* JetRec-03-00-29
+	* ATLJETMET-192
+	* python/JetRecStandardToolManager.py: Add charge for topo and pflow jets.
+	* share/*.ref, trigger/*.ref, rdotoesd/*.ref, qtest/*.ref: Update with new results.
+
+2015-03-19 David Adams
+	* JetRec-03-00-28
+	* ATLJETMET-298
+	* python/JetRecStandardToolManager.py: Remove duplicate inclusion of
+	  jetorigincorr in calib_topo_ungroomed_modifiers.
+	  There are also some inconsequential formatting changes.
+	* share/test_RunJetRec.log.clean.ref: Update for above change.
+
+2015-03-18 David Adams
+	* JetRec-03-00-27
+	* ATLJETMET-281
+	* rdotoesd/myTopOptions.py: Update with new DB tag for BTagging.
+	* rdotoesd/*.ref: Update with now btagged Akt2 jets.
+
+2015-03-17 David Adams
+	* JetRec-03-00-26
+	* ATLJETMET-281
+	* share/JetRec_jobOptions.py: Add AkT2 track jets.
+	* share/RunJetRec.py: Add AkT2 track jets.
+	* share/test_RunJetRec.py: Add dump of new track jets.
+	* share/*.ref: Update.
+	* rdotoesd/go: Improve log formatting.
+	* rdotoesd/*.ref: Update.
+
+2015-03-17 David Adams
+	* JetRec-03-00-25
+	* ATLJETMET-260
+	* python/JetRecStandardTools.py: Modify jetjdrlabeler and add
+	  trackjetdrlabeler.
+	* python/JetRecStandardToolManager.py: Modify so track jets use
+	  trackjetdrlabeler instead of jetjdrlabeler. Also define
+	  truth jet modifier maps only if truth is on.
+	* share/test_RunJetRec.log.clean.ref: Update after check.
+	* share/pflowjets.log.clean.ref: Update after check.
+
+2015-03-16 David Adams
+	* JetRec-03-00-24
+	* ATLASRECTS-1846, ATLJETMET-273
+	* python/JetRecStandard.py: Fix set of jetFlags.useTracks. Add
+	  but disable block to use BTagging.
+
+2015-03-16 David Adams
+	* JetRec-03-00-23
+	* ATLJETMET-260
+	* share/test_RunJetRec.py: Fix test of flavor matching tool.
+	  It is now validated.
+	* share/test_RunJetRec.log.clean.ref: Update after verification.
+	* share/pflowjets.log.clean.ref: Update after verification.
+
+2015-03-16 David Adams
+	* JetRec-03-00-22
+	* ATLJETMET-260
+	* This is not yet validated.
+	* python/JetRecStandardTools.py: Modify configuration for change in
+	  properties of matching tool. There is now one tool jetdrlabler for B,
+	  C and tau.
+	* python/JetRecStandardToolManager.py: Schedule jetdrlableler instead
+	  of the previous matching tools.
+	* share/test_RunJetRec.py: Dump the new matching flavor vectors.  
+	* share/test_RunJetRec.log.clean.ref: Update after checking.
+
+2015-03-12 David Adams
+	* JetRec-03-00-21
+	* ATLJETMET-260
+	* This is not yet tested.
+	* python/JetRecStandardTools.py: Add B and C cone matching tools:
+	  bdrlabeler and cdrlabeler.
+	* python/JetRecStandardToolManager.py: Add same for all ungroomed
+	  jets.
+	* share/test_RunJetRec.py: Add dump of the new associations.
+
+2015-03-12 David Adams
+	* JetRec-03-00-20
+	* ATLJETMET-273
+	* python/JetRecStandardToolManager.py: Add pT-sorting of jet
+	  containers after calibration and grooming.
+	* share/*.ref: Update after verification.
+
+2015-03-11 David Adams
+	* JetRec-03-00-19
+	* ATLJETMET-273
+	* share/*.ref: Update after verification.
+	* python/JetRecFlags.py: Drop use of rec code. Set initial Status
+	  to false for the flags (truth, topo, tracks muon) that can be set
+	  in JetRecStandard.
+	* python/JetRecStandard.py: Use rec flags to set the above jet flags
+	  iff they have not been set elsewhere.
+	* python/JetRecStandardToolManager.py: Set the status to on for the
+	  above flags and display all flags used in the module.
+
+2015-03-06 David Adams
+	* JetRec-03-00-18
+	* Fix ChangeLog.
+
+2015-03-06 David Adams
+	* JetRec-03-00-17
+	* ATLJETMET-211
+	* python/JetRecStandardTools.py: Add definition of tool jetsorter.
+	* share/myjets.log.clean.ref: Update for sorted jets.
+	* share/myjets.py: Add test of jetsorter.
+
+2015-03-06 David Adams
+	* JetRec-03-00-16
+	* ATLJETMET-273
+	* python/JetToolSupport.py: Improve error reporting when calibOpt is
+	  not specified and calibration is requested.
+	* derivation: Add this test for derivation.
+
+2015-03-05 David Adams
+	* JetRec-03-00-15
+	* ATLJETMET-195
+	* share/test_RunJetRec.log.clean.ref: Update for recent change in JVT.
+	* share/qtest2: Add script to run the new qtests.
+
+2015-03-04 James Frost
+	* JetRec-03-00-14 (previous tag was missing Changelog)
+	* ATLJETMET-263
+	* python/JetRecStandardTools.py : add track selection to JVT
+
+2015-03-02 David Adams
+	* JetRec-03-00-12
+	* ATLJETMET-195
+	* python/JetRecStandardToolManager.py: Reorganize so clsmoms is not
+	  run for pflow jets.
+	* share/test_RunJetRec.log.clean.ref: Update to include clsmoms
+	  variables.
+	* rdotoesd/myTopOptions.py: Add DB version needed for BTagging.
+
+2015-02-27 Jakub Cuth
+	* JetRec-03-00-11
+	* ATLJETMET-195
+	* JetRecStandardTools.py, JetRecStandardToolManager.py: adding
+	JetClusterMomentsTool with name "clsmoms" to "topo_ungroomed_modifiers"
+	* test_RunJetRec.py: dump new moments
+
+2015-02-25 David Adams
+	* JetRec-03-00-10
+	* ATLJETMET-262
+	* Root/JetToolRunner.cxx: Fix timing report crash.
+
+2015-02-24 David Adams
+	* JetRec-03-00-09
+	* ATLJETMET-258
+	* share/*.ref: Update refs with current results.
+
+2015-02-23 David Adams
+	* JetRec-03-00-08
+	* ATLJETMET-183
+	* python/JetToolSupport.py: Allow calibOpt w/o calibration tool.
+
+2015-02-20 David Adams
+	* JetRec-03-00-07
+	* ATLJETMET-243
+	* PseudoJetGetterRegistry: Add this new tool.
+	* Root/PseudoJetGetter.cxx: Add registration of this tool.
+	* python/JetRecStandardTools.py: Drop specification of inputs for
+	  jetisol.
+	* share/test_RunJetRec.py: Replace dump of IsoDelta2SumPt for topo
+	  jets with dump of IsoDelta2SumPt and IsoDelta3SumPt for all jets.
+	* share/*.ref: Update after validation.
+
+2015-02-19 David Adams
+	* JetRec-03-00-06
+	* ATLJETMET-243
+	* python/JetRecStandardTools.py: Update tool jetisol to use a
+	  pseudojet getter lcget instead of the calo cluster container.
+	  This is the new interface for that tool.
+	* share/test_RunJetRec.py: Increase the verbose and debug message
+	  limits and add commented out block to make jetisol verbose.
+
+2015-02-19 David Adams
+	* JetRec-03-00-05
+	* ATLJETMET-26.
+	* share/test_RunJetRec.log.clean.ref.oldtruthwz: Add this ref with the
+	  results from the old WZ selection (before JetRec-03-00-03).
+	* share/*.py: Drop references to bchcorrclus.
+	* share/*.ref: Update.
+
+2015-02-09    <delsart@localhost>
+	* JetRec-03-00-04
+	* ATR-9696
+	* JetAlgorithm.py, JetRecStandardTools.py : comment out
+	JetBadChanCorrTool and MissingCellListTool
+
+	* JetRec-03-00-03
+	* ATLJETMET-26
+	* python/JetRecStandardTools.py: fix config of TruthWZJets
+
+2015-02-05 Mark Hodgkinson
+	* JetRec-03-00-02
+	* ATLJETMET-220
+	* Add new jetflag useVertices and use it to disable use of vertices in pflow for cosmics
+
+2015-01-21    <delsart@localhost>
+	* JetRec-03-00-01
+	* ATLJETMET-26
+	* python/JetRecStandardTools.py, python/JetAlgorithm.py : make use of ParticleJetTools to build
+	input to truth jets
+
+2015-01-14 David Adams
+	* JetRec-03-00-00
+	* ATLJETMET-89
+	* python/JetRecFlags.py: Allow RecExConfig to be missing.
+	* python/JetRecStandardTools.py: Allow MissingCellListTool,
+	  JetCaloCellQualityTool, JetJetBadChanCorrTool,
+	  ShowerDeconstructionTool and all of ParticleJetTools to
+	  be missing. Flag jtm.haveXXX is set for each.
+	* python/JetFlavorAlgs.py: Allow ParticleJetTools to be missing.
+	* python/JetRecStandardToolManager.py: Allow ParticleJetTools to be missing.
+	* share/RunJetRec.py: Allow ShowerDeconstructionTool to be missing.
+
+2015-01-12    <delsart@localhost>
+	* JetRec-02-04-85
+	* ATLJETMET-180
+	* python/JetRecStandardTools.py: MissingCellListTool now imported
+	from JetRecCalo, with a protection if this package does not exists (AthAnalysisBase).
+
+2014-12-22 David Adams
+	* JetRec-02-04-84
+	* ATLJETMET-176
+	* python/JetToolSupport.py: Make area calc default true for split jets.
+	* share/test_RunJetRec.py: Enable display of area for groomed jets.
+	* share/test_RunJetRec.log.clean.ref: Update for above changes.
+
+2014-10-19 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements
+		Update the required FastJet components to reflect the new cmake package handler name (FindFastJet.cmake).
+		Transparent to CMT
+	* Tagged as JetRec-02-04-83
+
+2014-12-18 David Adams
+	* JetRec-02-04-82
+	* ATLJETMET-176
+	* python/JetToolSupport.py: Modify the splitter, trimmer and pruner
+	  methods to provide an argument to choose between building jets with or
+	  without area. Default is fals (for now) for the splitter and true for
+	  the others.
+	* Root/JetSplitter.cxx: Add verbose and debu messages.
+	* share/test_RunJetRec.py: Disable display of area quantities for
+	  split jets.
+	* share/test_RunJetRec.log.clean.ref: Update (now w/o split jet areas).
+	* share/test_RunJetRec.log.clean.ref0: Save old ref (w split jet areas).
+
+2014-12-18 David Adams
+	* JetRec-02-04-81
+	* ATLJETMET-157
+	* Root/MuonSegmentPseudoJetGetter.cxx: Fix calculation of four-vector.
+	* share/test_RunJetRec.py: Add but comment out debugging.
+
+2014-12-16    <delsart@localhost>
+	* JetRec-02-04-80
+	* merging JetRec-02-04-05-branch (at -04)
+	* ATLJETMET-169
+	* JetConstitRemover.h/cxx added.	
+	* python/JetRecStandardTools.py : instance of JetConstitRemover added.
+	
+2014-12-08 David Adams
+	* JetRec-02-04-79
+	* ATLJETMET-163
+	* python/JetRecCalibrationFinder.py: Add o for Origin in sequence flags.
+	* python/JetRecStandardToolManager.py: For calibrated jets, move the
+	* share/JetRec_jobOptions.py: Add origin correction fo calibrated jets.
+	* share/RunJetRec.py: Add origin correction for calibrated jets.
+	* share/test_RunJetRec.py: Add dump of origin and pileup corrected flags.
+	* share,rdotoesd,qtest*/*.ref: Update.
+
+
+2014-12-08 David Adams
+	* JetRec-02-04-78
+	* ATLJETMET-158
+	* Raise truth H, W, Z, top thresholds to pT>100 GeV.
+	* share/*.ref: Update.
+	* rdotoesd/*.ref: Update.
+
+2014-12-08 David Adams
+	* JetRec-02-04-77
+	* ATLJETMET-155
+	* share/pflowjets.py: Turn on EMCPFlow jets.
+	* share/pflowjets.log.clean.ref: Update for above change.
+
+2014-12-08 David Adams
+	* JetRec-02-04-76
+	* ATLJETMET-156
+	* rdotoesd/go: Show FPEs and add option to only run checks.
+	* trigger/go: Show FPEs and add option to only run checks.
+	* qtest/go: Show FPEs and add option to only run checks.
+
+2014-12-06 David Adams
+	* JetRec-02-04-75
+	* ATLJETMET-155, ATLJETMET-153
+	* share/trimjets.log.clean.ref: Update.
+	* share/pflowjets.py: Update with new input file and to only find EM
+	  pflow jets.
+	* share/pflowjets.log.clean.ref: Update.
+	* trigger/trigcount.log.ref: Update.
+	* trigger/trigcount.log.ref: Update.
+	* qtest/qtest_run1.log.ref: Update.
+	* qtest/qtest_run2.log.ref: Update.
+
+2014-12-05 David Adams
+	* JetRec-02-04-74
+	* ATLJETMET-153
+	* share/*.py,*.ref: Update tests. Pflowjest still not working.
+
+2014-12-05    <delsart@localhost>
+	* JetRec-02-04-73
+	* ATLJETMET-152
+	* share/JetRec_jobOptions.py:  fix EventShapeAuxInfo  not added to
+	output stream
+
+2014-12-05 David Adams
+	* JetRec-02-04-72
+	* ATLJETMET-15
+	* python/JetRecStandardTools.py: Update for new JetLArHVtool.
+	* rdotoesd/myTopOptions.py: Enable muon reco
+
+2014-12-05    <delsart@localhost>
+	* JetRec-02-04-70
+	* ATLJETMET-15
+	* JetRecStandardTools.py : adapt to new JetLArHVTool 
+	* JetRecStandardToolManager : re-add larhvcorr since it now uses
+	clusters
+	
+2014-12-04    <delsart@localhost>
+	* JetRec-02-04-69
+	* ATLJETMET-29
+	* JetRecStandardTools.py: configure our TrackVertexAssociationTool
+	to use an InDet ITrackVertexAssociationTool (tight selection)
+
+2014-12-02 David Adams
+	* JetRec-02-04-68
+	* ATLJETMET-20
+	* python/JetRecCalibrationFinder.py: Add argument to specify prefix
+	  for event shape keys.
+	* python/JetToolSupport.py: Use third call argument as event shape
+	  prefix with default value of "Kt4".
+
+2014-12-04    <delsart@localhost>
+	* JetRec-02-04-67
+	* ATLJETMET-147 & ATLASRECTS-1368
+	* python/JetRecStandardTools.py: remove unused InDet__InDetDetailedTrackSelectionTool
+	* python/JetRecStandardTools.py : also changing TruthEvent to
+	TruthEvents
+	
+2014-12-03    <delsart@localhost>
+	* JetRec-02-04-66	
+	* Merging JetRec-02-04-59-branch 
+	* ATLJETMET-130 : change configuration to use versionless
+	container types. Use a branch during migration phase.
+
+2014-12-02 David Adams
+	* JetRec-02-04-65
+	* ATLJETMET-18
+	* python/JetRecStandardTools.py: Add configuration of JVT instance jvt.
+	* python/JetRecStandardToolManager.py: Add jvt for ungroomed topo and
+	  pflow jets.
+	* *.ref: Update.
+
+2014-12-02 David Adams
+	* JetRec-02-04-64
+	* ATLJETMET-136
+	* python/JetRecCalibrationFinder.py: Fix handling of calib key/file
+	  argument, extend map and rewrite/extend the EMTopo flip code.
+	* python/JetToolSupport.py: Fix the code for specifying calibration
+	  options.
+	* share/go: Add option to update refs.
+	* share/pflowjets.py: Add use of pflow calibration file.
+	* share/JetRec_jobOptions.py: Specify pflow calibration file for pflow jets.
+	* share/*.ref: Update.
+
+2014-12-01 David Adams
+	* JetRec-02-04-63
+	* ATR-9580
+	* python/JetAlgorithm.py: Fix previous change.
+
+2014-12-01 David Adams
+	* JetRec-02-04-62
+	* ATR-9580
+	* python/JetAlgorithm.py: Make sure tool does not already exist before
+	  adding event shape tool.
+
+2014-12-01 David Adams
+	* JetRec-02-04-61
+	* ATLJETMET-123.
+	* python/JetRecCalibrationFinder.py: Add configuration for pflow.
+	* share/go: Add list and diff options.
+
+2014-12-01 David Adams
+	* JetRec-02-04-60
+	* ATLJETMET-94
+	* python/NewJetFlavorAlgs.py: Drop this obsolete file.
+	* python/JetFlavorAlgs.py: Update to work with split of truth flavor
+	  algs int tools and coomon algorithm to run them
+	  (ParticleJetTools-00-03-15).
+	* share/test_RunJetRec.py: Check for ConeTruthLabelID instead of
+	  TruthLabelID.
+	* share/*.ref, qtest/*.ref: Update.
+
+2014-11-29 David Adams
+	* JetRec-02-04-59
+	* ATLJETMET-65
+	* python/JetToolSupport.py: Fix check that calibration was performed
+	  when caliOpt is provided.
+2014-11-29 David Adams
+	* JetRec-02-04-58
+	* ATLJETMET-136
+	* python/JetRecCalibrationFinder.py: Add EMTopo-->TopoEM switch
+	  for trigger configuration file.
+
+
+2014-11-28 David Adams
+	* JetRec-02-04-57
+	* ATLJETMET-131
+	* python/JetRecCalibrationFinder.py: Fix to use original instead
+	  of patched input specifier to determine event shape key.
+
+2014-11-28 David Adams
+	* JetRec-02-04-56
+	* ATLJETMET-131
+	* python/JetRecCalibrationFinder.py: Add event shape key to
+	  configuration of the calibration tool.
+	* share/pflowjets.py: Raise jet threshold.
+	* share/pflowjets.log.clean.ref: Rename from flowjets.log.clean and
+	  update.
+
+2014-11-25 David Adams
+	* JetRec-02-04-55
+	* ATLJETMET-122
+	* python/JetAlgorithm.py: Fix pflow rho mapping.
+	* qtest/qtest_run1.log.ref: Update.
+	* qtest/qtest_run2.log.ref: Update.
+	* share/cpjets.py: Add rho.
+	* share/myjets.py: Add rho.
+	* share/pflowjets.py: Add rho.
+	* share/test_RunJetRec.log.clean.ref: Update.
+	* share/myjets.log.clean.ref: Update.
+	* share/trimjets.clean.ref: Update.
+	* share/pflowjets.log.clean.ref: Update.
+	* share/vrjets.log.clean.ref: Update.
+	* share/cpjets.log.clean.ref: Add this.
+
+2014-11-25 David Adams
+	* JetRec-02-04-54
+	* ATLJETMET-62
+	* JetConstituentsRetriever: A retrieval of ghost constituents.
+	* Root/JetReclusterer: Modify to take ghost labels from constituent
+	  retriever.
+	* python/JetRecStandardTools.py: Extend configuration of
+	  jconretriever.
+	* share/reclusterjets.log.clean.ref: Update.
+	* share/reclusteroldjets.py: Drop moments. Disable debug.
+	* share/reclusteroldjets.log.clean.ref: Add this.
+
+2014-11-25 Mark Hodgkinson
+	* ATLJETMET-122
+	* Update pflow jet finding to apply the pileup area correction (share/JetRec_jobOptions.py and python/JetRecStandardToolManager.py)
+
+2014-11-25 David Adams
+	* ATLJETMET-62
+	* share/reclusteroldjets.py: Add this demo/test for reclustering
+	  existing jets.
+
+2014-11-24 David Adams
+	* JetRec-02-04-53
+	* ATLJETMET-62
+	* JetDumper: Add option to diplay count of pesudojet constituents.
+	* JetConstituentsRetriever: Add option to use jet constituents.
+	* JeReclustere: Drop check for pseudojet retriever. This now taken
+	  care of by jet constituent retiever.
+	* python/JetRecStandardTools.py: Add set of UseJetConstituents to
+	  jetconretriever.
+	* share/reclusterjets.py: Add display of pseudojet constituent counts.
+	* share/trimjets.py: Add LCTopo event shape.
+
+2014-11-24 David Adams
+	* JetRec-02-04-52
+	* ATLJETMET-62
+	* Root/JetConstituentsRetriever.cxx: Add missing return.
+
+2014-11-24 David Adams
+	* JetRec-02-04-50
+	* ATLJETMET-62
+	* JetConstituentsRetriever: Add this with implementation that (so far)
+	  only takes constituents from jet pseudojet.
+	* JetPseudojetRetriever: Add comments.
+	* JetReclusterer: Modify to use IJetConstituentsRetriever tool to
+	  retrieve the jet constituents.
+	  src/components/JetRec_entries.cxx: Add JetConstituentsRetriever.
+	* python/JetRecStandardTools.py: Add standard JetConstituentsRetriever
+	  named jconretriever.
+	  python/JetToolSupport: Modify to configure created JetReclusterer
+	  tools with the above JetConstituentsRetriever.
+	* share/reclusterjets.py: Add creation of LCTopo event shape.
+
+2014-11-21 David Adams
+	* share/pflowjets.py: Reduce debug level.
+	* Updated for fix in xAODJet.
+
+2014-11-21 David Adams
+	* JetRec-02-04-49
+	* ATLJETMET-35
+	* python/JetRecFlags.py: Add flag useBTagging set False by default.
+	* python/JetToolSupport.py: Add code to schedule btagging where
+	  modifier "btag" is found.
+	* python/JetRecStandardToolManager.py: Schedule B-tagging for topo
+	  jets iff the useBTagging flag is True.
+	* jetbtag: Same as rdotoesd except Btaggging is scheduled by jet reco.
+	  Has errors.
+	* rdotoesd/AOD.pool.root.dump.ref: Update.
+
+2014-11-21 David Adams
+	* JetRec-02-04-48
+	* ATLJETMET-122
+	* python/JetRecFlags.py: Change default for eventShapeTools to None.
+	* python/JetAlgorithm.py: Add messages for event shape tools and
+	  add no tools if request has value None. Change flag from usePflow to
+	  usePFlow. Change labels for topo and add support for the three
+	  flavors of pflow.
+	* share/JetRec_jobOptions.py: Update for above name change in usePFlow.
+	* share/test_RunJetRec.py: Update for change in event shape topo
+	  labels.
+
+2014-11-21 David Adams
+	* JetRec-02-04-47
+	* ATLJETMET-90
+	* python/JetFlavorAlgs.py: Add W, Z, H and top ghost associations.
+	* python/JetRecFlags.py: Add W, Z, H and top ghost associations.
+	* share/test_RunJetRec.log.clean.ref: Updated for changes here.
+	* share/dumpxaod: Modify to only show branch names.
+	* rdotoesd/AOD.pool.root.dump.ref: Update for changes here.
+
+2014-11-21 David Adams
+	* JetRec-02-04-46
+	* ATLJETMET-55
+	* python/JetRecStandardTools.py: Add partontruthlabel.
+	* python/JetRecStandardToolManager.py: Add parton truthlabel
+	  to Tier0 reco. So we get PartonTruthLabelID for MC.
+	* share/test_RunJetRec.py: Add display of PartonTruthLabelID.
+	* rdotoesd/go: Add dump of AOD to file.
+	* rdotoesd/AOD.pool.root.dump.ref: Add this ref for the previous.
+
+2014-11-21 David Adams
+	* qtest/go: Drop date fro file listings.
+	* qtest/qtest_run1.log.ref: Update this reference file listing.
+	* qtest/qtest_run2.log.ref: Update this reference file listing.
+
+2014-11-21 David Adams
+	* share/test_RunJetRec.log.clean.ref: Update with latest results.
+	* share/trimjets.log.clean.ref: Update with latest results.
+	* share/clusterjets.log.clean.ref: Update with latest results.
+	* rdotoesd/jetcollections.log.ref: Update with latest results.
+	* qtest/go: Add file listing after running tests.
+	* qtest/qtest_run1.log.ref: Add this reference file listing.
+	* qtest/qtest_run2.log.ref: Add this reference file listing.
+
+2014-11-21 David Adams
+	* JetRec-02-04-45
+	* ATLJETMET-86
+	* python/JetToolSupport.py: Add Timing back to caloqual tools.
+	* share/test_RunJetRec.py: Add Timing to displayed topo variables.
+
+2014-11-20 David Adams
+	* JetRec-02-04-44
+	* ATLJETMET-62
+	* python/JetToolSupport.py: Add method addJetReclusterer that
+	  reclusters the jets.
+	* share/reclusterjets.py: Simple top-level option to demonstrate
+	  reclustering.
+	* share/reclusterjets.log.clean.ref: reference log for the above 
+	  options.
+
+2014-11-20 David Adams
+	* ATLJETMET-62
+	* JetReclusterer: Add this groomer.
+	* src/components/JetRec_entries.cxx: Add JetReclusterer.
+	* JetSplitter: Downgrade missing pseudojet from ERROR to WARNING.
+	* python/JetToolSupport.py: Restructure so that the finder used by
+	  the JetRec finder is constructed in a dedicated function.
+	* share/test_RunJetRec.py: Drop checks for Timing and HECQuality
+	  which are missing due to problems with JetCaloCellQualityTool
+	  (ATLJETMET-86).
+
+2014-11-20 David Adams
+	* ATLJETMET-25
+	* JetPruner: Downgrade missing pseudojet from ERROR to WARNING.
+	* JetSplitter: Downgrade missing pseudojet from ERROR to WARNING.
+
+2014-11-18 David Adams
+	* JetRec-02-04-42
+	* ATLJETMET-25
+	* ATLJETMET-86
+	* python/JetRecStandardTools.py: update definitions of caloqual_cluster
+	  and caloqual_cell for new JetCaloCellQualityTool properties.
+	* python/JetRecStandardToolManager.py: Drop the now-obsolete
+	  bchcorrclus.
+
+2014-11-18 David Adams
+	* JetRec-02-04-43
+	* ATLJETMET-25
+	* JetPseudojetCopier: Change flag to check all constituents instead of
+	  only first.
+
+2014-11-18 David Adams
+	* JetRec-02-04-42
+	* ATLJETMET-25
+	* JetPseudojetRetriever: Use map if jet does not have a psuedojet.
+	* CopyPseudoJets: Remove this (but keep code in following).
+	* JetPseudojetCopier: Add this with both the old copy interface and
+	  the new IJetConsumer interface (so it can be called by JetRecTool).
+	* JetRecTool: Add a pseudojet retrieve which is passed to groomers and
+	  modifiers. Add a sequnce of consumers run after reco.
+	* JetTrimmer: Downgrade missing pseudojet from ERROR to WARNING.
+	* python/JetRecStandardTools.py: Add jet pseudojet retriever
+	  jpjretriever.
+	* python/JetToolSupport.py: Add consumers to jet finding and 
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2014-11-17 David Adams
+	* JetRec-02-04-41
+	* ATLJETMET-25
+	* CopyPseudoJets: Clean up and use tool to retrieve pseudo jets.
+	* JetRecTool: Set pseudojet retriever for modifiers.
+
+2014-11-14 David Adams
+	* ATLJETMET-25
+	* JetPseudojetRetriever: Add this.
+	* JetPruner: Modify to use JetPseudojetRetriever.
+	* JetTrimmer: Modify to use JetPseudojetRetriever.
+	* JetSplitter: Modify to use JetPseudojetRetriever.
+	* JetRecTool: Modify to create a JetPseudojetRetriever and
+	  use it and set the groomer and modifiers with it.
+
+2014-11-14    <delsart@localhost>
+	* JetRec-02-04-40
+	* ATLJETMET-77
+	* Root/JetSorter.cxx (modify): protects agains empty container.
+
+2014-11-14 David Adams
+	* JetRec-02-04-39
+	* ATLJETMET-54
+	* trigger/go: Add grep for trigger counts.
+	* trigger/trigcount.log.ref: Add this file with reference trigger
+	  counts.
+
+2014-11-14 David Adams
+	* JetRec-02-04-38
+	* ATLJETMET-99, ATLJETMET-54
+	* python/JetRecCalibrationFinder.py: Add argument to set config file
+	  and map to hold options.
+	* python/JetToolSupport.py: Add config argument to calibration string.
+	* share/test_RunJetRec.log.clean.ref: Update for changes here.
+	* trigger/go: Update to new menu for this test.
+
+2014-11-13 David Adams
+	* JetRec-02-04-37
+	* ATLJETMET-96
+	* Raise truth parton and HF hadron threholds.
+	* python/JetFlavorAlgs.py: Raise threshold from 50 to 5000.
+	* rdotoesd/myTopOptions.py: Restore the old default that disables
+	  trigger and muons (much faster and no JetConstituentVector
+	  warnings).
+	* share/test_RunJetRec.log.clean.ref: Update this reference.
+	* rdotoesd/jetcollections.log.ref: Update this reference.
+	* rdotoesd/AOD.pool.root.dump.ref: Add this reference.
+
+2014-11-13 David Adams
+	* JetRec-02-04-36
+	* ATLJETMET-28
+	* Enable pflow jet finding for Tier0.
+	* python/JetRecStandard.py: Remove disabling of pflow jet finding.
+	* python/JetRecStandardToolManager.py: Add track and track jet ghosts
+	  to pflow jet finding. Modifiers for pflow finding are now the same
+	  as those for topo finding.
+	* share/pflowjets.py: Modify to use standard modifier lists with a few
+	  exclusions for EM, EMC and LC pflow jets. Use minimal list for LCN
+	  pflow which has no ghosts.
+	* share/test_RunJetRec.log.clean.ref: Update.
+	* rdotoesd/save_myTopOptions.py: Add this save of job options.
+
+2014-11-13 David Adams
+	* JetRec-02-04-35
+	* ATLJETMET-1
+	* python/JetRecCalibrationFinder.py: Specify calib file by name
+	  w/o path. For JetCalibTools-00-04-09.
+
+2014-11-13 David Adams
+	* qtest: Add script to run qtest tests from Rolf.
+
+2014-11-12 David Adams
+	* ATLJETMET-54
+	* trigger/g: test of jet trigger.
+
+2014-11-12 David Adams
+	* JetRec-02-04-34
+	* ATLJETMET-68
+	* python/JetFlavorAlgs.py: Replace with version for
+	  ParticleJetTools-00-03-11.
+
+2014-11-12 David Adams
+	* ATLJETMET-68
+	* python/NewJetFlavorAlgs.py: This is a replacement for
+	  python/JetFlavorAlgs.py after we switch to ParticleJetTools-00-03-11
+	  or later. It appears to work but there appear to be problems
+	  with that tag of ParticleJetTools. See ATLJETMET-68.
+
+2014-11-12 David Adams
+	* ATLJETMET-60
+	* share/test_RunJetRec.log.clean.ref: Update for last change.
+	* rdotoesd/go: Update to write out jetcollections.log.
+	* rdotoesd/jetcollections.log.ref: Add this reference file to check
+	  reco in this directory.
+
+2014-11-10 David Adams
+	* JetRec-02-04-33
+	* ATLJETMET-60
+	* Root/JetFromPseudojet.cxx: Add some verbose logging messages.
+	* share/pflowjets.py: Add neutral pflow jets with many messages.
+
+2014-11-10 David Adams
+	* JetRec-02-04-32
+	* ATLJETMET-27
+	* JetFromPseudojet: Restructure with new internal method so that
+	  label reference list is used for found jets and empty ghost
+	  containers are not written for groomed jets.
+	* JetFinder: Pass through list of ghost labels.
+	* JetByVertexFinder: Pass through list of ghost labels.
+	* JetRecTool: For jet finding, evaluate and pass list of ghost
+	  label to jet finder.
+
+2014-11-07 David Adams
+	* JetRec-02-04-31
+	* ATLJETMET-79
+	* python/JetRecStandardTools.py: Modify jtm.tvassoc to cut on
+	  z0*sin(theta) instead of z0.
+	* share/test_RunJetRec.log.clean.ref: Update with new config.
+
+2014-11-06 David Adams
+	* JetRec-02-04-30
+	* Root/JetFromPseudojet.cxx: Add VERBOSE messages.
+	* util: Drop this unused directory.
+
+2014-11-06 David Adams
+	* JetRec-02-04-29
+	* ATLJETMET-79
+	* cmt/Makefile.RootCore: Add dep on EventShapeInterface.
+
+2014-11-06 David Adams
+	* JetRec-02-04-28
+	* ATLJETMET-79
+	* Root/JetRecTool.cxx: Formatting change.
+	* python/JetRecStandardTools.py: Relax d0 and z0 cuts in
+	  track-vertex association.
+
+2014-11-05 David Adams
+	* JetRec-02-04-27
+	* ATLJETMET-66
+	* share/trimjets.py: Disable debug and verbose messages.
+
+2014-11-05    <delsart@localhost>
+	* JetRec-02-04-26
+	* ATLJETMET-66 fixed
+	* JetFromPseudojet.cxx/h : factorized EM scale setting in
+	  buildAndSetEMScaleMom.
+
+2014-11-04 David Adams
+	* ATLJETMET-66
+	* share/trimjets.py: Add this test of trimming and jetens.
+	* Root/JetFromPseudojet.cxx: Add some debug messages.
+	* JetRec/JetTrimmer.h: Fix comment.
+
+2014-11-04 David Adams
+	* JetRec-02-04-25
+	* ATLJETMET-50
+	* python/JetRecStandardTools.py: Add jtm.jetorigincorr.
+	* python/JetRecStandardToolManager.py: Add jtm.jetorigincorr
+	  for topo jets.
+	* share/test_RunJetRec.py: Add dump of JetOriginConstitScaleMomentum.
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2014-11-03 David Adams
+	* JetRec-02-04-24
+	* ATLJETMET-61
+	* python/JetRecStandardTools.py: Add jtm.jvfloose.
+	* share/RunJetRec.py: Add loose JVF moment.
+	* share/test_RunJetRec.py: Add dump of loose JVF moment.
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2014-11-03 David Adams
+	* JetRec-02-04-23
+	* ATLJETMET-61
+	* python/JetRecStandardToolManager.py: Add log message.
+	* share/RunJetRec.py: Drop addition of truthpartondr--this is now done
+	  in JetRecStandardToolManager.
+
+2014-10-31 David Adams
+	* JetRec-02-04-22
+	* ATLASRECTS-1213
+	* python/JetRecStandardToolManager.py: Move the standard configuration
+	  of the jtm (jet tool manager) from JetRecStandard.py to this module.
+	  Non-RecExCommon clients should import jtm from here.
+	* python/JetRecStandard.py: Include the rec flags setting of jet flags
+	  that was done in JetRec_jobOptions and then import jtm from
+	  JetRecStandardToolManager.
+	  RecExCommon clients should continue to import jtm from here.
+	* python/JetRecStandardTools.py: Switch to JetRecStandardToolManager.
+	* python/JetAlgorithm.py: Switch to JetRecStandardToolManager.
+	* python/JetRecCalibrationFinder.py: Switch to JetRecStandardToolManager.
+	* share/JetRec_jobOptions.py: Drop the setting of jet flags from rec
+	  flags (this is now in JetRecStandard).
+	* python/RunJetRec.py: Switch to JetRecStandardToolManager.
+	* python/test_RunJetRec.py: Switch to JetRecStandardToolManager.
+	* python/cpjets.py: Switch to JetRecStandardToolManager.
+	* python/myjets.py: Switch to JetRecStandardToolManager.
+	* python/pflowjets.py: Switch to JetRecStandardToolManager.
+	* python/vrjets.py: Switch to JetRecStandardToolManager.
+	  get the same be
+	* rdotoesd/myTopOptions.py: Disable trigger and muon.
+
+2014-10-30 David Adams
+	* JetRec-02-04-21
+	* ATLJETMET-68
+	* python/JetRecStandard.py: Fix truth flavor config (truthpartondr was
+	  included improperly).
+
+2014-10-28 David Adams
+	* JetRec-02-04-20
+	* ATLJETMET-68
+	* share/RunJetRec.py: Remove debugging messages.
+	* share/JetRecStandard.py: Restructure truth flavor tool config.
+	  Add truthpartondr to all modifier lists.
+
+2014-10-28 David Adams
+	* JetRec-02-04-19
+	* ATLJETMET-61
+	* python/JetRecStandardTools.py: Switch to new track selection. InDet
+	  selection is disabled because it is not working yet.
+	* share/test_RunJetRec.py: Drop verbose setting for jetisol. Add dump
+	  of track pseudojets.
+	* rdotoesd/go: Add dump of jet collection names.
+	* share/test_RunJetRec.log.clean.ref: Update with current scripts. I
+	  checked this gives the same # selected tracks as before and the jets
+	  are unchanged.
+
+2014-10-28 David Adams
+	* JetRec-02-04-18
+	* share/JetRec_jobOptions.py: Fix error introduced by code to record
+	  event shape containers.
+
+2014-10-27 David Adams
+	* JetRec-02-04-17
+	* ATLJETMET-63
+	* share/JetRec_jobOptions.py: Fix algorithm name AntiKt --> CamKt for
+	  CamKt12TruthWZJets and CamKt12TruthWZJets.
+
+2014-10-24 David Adams
+	* JetRec-02-04-15
+	* ATLJETMET-14
+	* python/JetRecStandardTools.py: Replace jtm.isolation with jtm.jetisol and
+	  jtm.run1jetisol. Latter is same config as before, i.e. run 1 values.
+	  Config jtm.jetisol includes IsoDelta2SumPt and IsoDelta3SumPt because it
+	  I cannot run with only one value.
+	* share/RunJetRec.py: Drop jtm.isolation.
+	* share/test_RunJetRec.py: Update dump to only include IsoDelta2SumPt.
+
+2014-10-24 David Adams
+	* JetRec-02-04-14
+	* ATLJETMET-48
+	* python/JetAlgorithm.py: Modify to define a function that is used to
+	  add jet reco to an algorithm sequence. The previous version simply
+	  added jet reco to the default sequnce with no need for a function call.
+	* python/JetToolSupport.py: Add argument to addJetCopier specifying
+	  whether copy is deep or shallow.
+	* share/cpjets.py: Switch to new configuration of algorithm sequnce.
+	* share/myjets.py: Switch to new configuration of algorithm sequnce.
+	* share/pflowjets.py: Switch to new configuration of algorithm sequnce.
+	* share/vrjets.py: Switch to new configuration of algorithm sequnce.
+	* share/RunJetRec.py: Switch to new configuration of algorithm sequnce.
+	* share/test_RunJetRec.py: Switch to new configuration of algorithm sequnce.
+	* share/JetRec_jobOptions.py: Switch to new configuration of algorithm sequnce.
+	* share/run.py: Remove this.
+
+2014-10-24 David Adams
+	* python/JetRecStandard.py: Add bad LAr tool but comment out because
+	  initialization causes errors (ATLJETMET-15).
+	* share/RunJetRec.py: Diable use of bad LAr tool.
+	* rdotoesd/myTopOptions.py: Add top options with variety of input files.
+	* rdotoesd/go: Modify to use local options if present.
+
+2014-10-22    <delsart@localhost>
+	* JetRec-02-04-12
+	* ATLJETMET-25
+	* Reworked CopyPseudoJets[.cxx/h]: now modifies the container it
+	acts on, copying pseudojet from another container.
+	* python/JetToolSupport.py: added methods to schedule a
+	copy+rebuilding of pseudojet of an existing container. 
+
+2014-10-21 David Adams
+	* JetRec-02-04-11
+	* ATLJETMET-16
+	* python/JetRecStandardTools.py: Add Delta-r truth flavor labeling
+	  tool truthpartondr.
+	* python/JetRecStandard.py: Make copies before storing getters and
+	  modifier lists in jtm maps. Previously changes to one entry would
+	  effect others.
+	* share/RunJetRec.py: Add flagged code to add Delta-R truth flavor
+	  labeling to jets. Fix the radii for the large-R truth jets.
+	* share/RunJetRec.py: Add flagged code to show Delta-R truth flavor
+	  moments.
+
+2014-10-21 David Adams
+	* JetRec-02-04-10
+	* ATLJETMET-16
+	* python/JetRecFlags.py: Add "Partons" to the list of truth flavor labels.
+
+2014-10-20 David Adams
+	* JetRec-02-04-09
+	* Root/JetPruner.cxx: Add return after error is raised for null pseudojet.
+	* Root/JetTrimmer.cxx: Add return after error is raised for null pseudojet.
+	* Root/JetSplitter.cxx: Add return after error is raised for null pseudojet.
+
+2014-10-20 David Adams
+	* JetRec-02-04-08
+	* share/RunJetRec.py: Change to useLArHVCorr = jetFlags.useTruth == False.
+	* share/test_RunJetRec.py: Add check of showerdec moments.
+	* share/test_RunJetRec.log.clean.ref: Update this.
+
+2014-10-19 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements
+		Another attempt at specifying the required FastJet components for cmake (transparent to CMT)
+	* Tagged as JetRec-02-04-07
+
+2014-10-17 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements
+		Specify the required FastJet components for cmake (transparent to CMT)
+	* Tagged as JetRec-02-04-06
+
+2014-10-17    <delsart@localhost>
+	* JetRec-02-04-05
+	* adapt to new event shape objects :
+	* python/JetRecFlags.py : eventShapeTools default value ['lc','em']
+	* share/JetRec_jobOptions.py : save EventShape objects 
+	* python/JetRecUtils.py : adapt retrieveAODList to EventShape objects 
+
+2014-10-10    <delsart@localhost>
+	* JetRec-02-04-04
+	* python/JetRecCalibrationFinder.py : adapted to PathResolver in JetCalibTools
+
+2014-10-10 David Adams
+	* JetRec-02-04-03
+	* See ATLJETMET-10.
+	* python/JetRecStandardTools.py: Add definition of modifier showerdec.
+	* share/RunJetRec.py: Add showerdec to the modifiers for topo jets.
+	* share/test_RunJetRec.py: Add display of the showerdec moments.
+
+2014-10-07 David Adams
+	* rdotoesd: Add this test directory.
+
+2014-10-07 David Adams
+	* JetRec-02-04-02
+	* python/JetRecCalibrationFinder.py: Add CalibConfigs directory to
+	  calibration file name to match structure in JetCalibTools/data.
+	* share/RunJetRec.py: Add JES calibration to one of the containers.
+
+2014-09-30 David Adams
+	* JetRec-02-04-00
+	* JetToolRunner: Fix log message.
+	* python/JetRecFlags.py: Drop applyCalibrationName. Add
+	  defaultCalibOpt.
+	* python/JetRecCalibrationFinder.py: Replace EMTopo --> TopoEM
+	  for current configuration.
+	* python/JetToolSupport.py: Drop support for old calibration tool.
+	  Allow option string for new calibration tool to come from jet
+	  configuration methods.
+	* python/JetRecStandard.py: Drop use of old calibration tool.
+	  Drop setting of calibration option.
+	* share/test_RunJetRec.py: Drop set of jetFlags.applyCalibrationName.
+	* share/RunJetRec.py: Add jet caibration flags to jet building
+	  commands.
+	* share/JetRec_jobOptions.py: Add calibration options for topocluster
+	  jets. Drop ZTrack jets.
+
+2014-09-23    <delsart@localhost>
+	* JetRec-02-03-01
+	* Root/JetRecTool.cxx : added a shallow-copy option 
+
+2014-09-19 David Adams
+	* JetRec-02-03-00
+	* JetToolRunner: Add list of event shape tools to run before jet tools.
+	* cmt/requirements: Add dep in EventShapeInterface.
+	* python/JetRecCalibrationFinder.py: Add this object that configures
+	and returns jet calibration tools.
+	* python/JetToolSupport.py: Use the above tool for modifier name calib:XXX.
+	* python/JetRecStandard.py: Use calib:XXX instead of
+	applyCalibration:XXX when jetFlags.applyCalibrationName is other than
+	jes or offset.
+	* python/JetRecFlags.py: Add jetFlags.eventShapeTools().
+	* python/JetAlgorithm.py: Add scheduling of an event shape tool for
+	each entry in jetFlags.eventShapeTools.
+	* share/test_RunJetRec.py: Add set of flags for event shape tools and
+	change calibration to use new calibration tool.
+	* share/test_RunJetRec.log.clean.ref: Update to log obtained before changes
+	here.
+	* share/cleanlog: Add cleaning of lines showing processing time.
+	* share/go: Add check for FATAL messages.
+
+2014-09-16 David Adams
+	* JetRec-02-02-06
+	* share/test_RunJetRec.py: Ad option to test with a data file.
+	* python/JetRecStandard.py: Add some log messages.
+
+2014-09-11    <delsart@localhost>
+	* JetRec-02-02-08
+	* cmt/requirements: fix checkreq warning
+
+2014-09-09    <delsart@localhost>
+	* JetRec-02-02-07
+	* python/JetRecFlags.py (useTruth): make so the default value of
+	useTruth is an alias to rec.doTruth() in order to avoid import
+	order issues. 
+
+2014-09-03 David Adams
+	* JetRec-02-02-06
+	* python/JetRecFlags.py: Add TausFinal to the list of flavor tags.
+
+2014-09-02 David Adams
+	* JetRec-02-02-05
+	* python/JetFlavorAlgs.py: Add this module to schedule truth flavor
+	  algorithms.
+	* python/JetAlgorithm.py: Use the above to schedule truth flavor
+	  building.
+	* python/JetRecFlags.py: Add flag truthFlavorTags holding the list of
+	  truth flavor names.
+	* python/JetRecStandard.py: Add truth flavor ghosts.
+	* share/test_RunJetRec.py: Add test of truth flavor containers and jet
+	  attributes.
+
+2014-08-28    <delsart@localhost>
+	* JetFinder.cxx, JetByVertexFinder : remove usage of deprecated msg_level_name() 
+	* JetRec-02-02-04
+
+2014-08-25    <delsart@localhost>
+	* FastJetInterfaceTool back in Root now it's compatible with ROOTCORE
+	* JetRec-02-02-03
+
+2014-08-22 David Adams
+	* Root/CopyPseudoJets.cxx: Replace CHECK with explicit check on status
+	code to allow compilation in Root.
+	* JetRec-02-02-02
+
+2014-08-21    <delsart@localhost>
+	* CopyPseudoJets : added  (alows to copy PseudoJets associated to
+	a jets in JetContainer into jets in an other JetContainer)
+	* JetRec-02-02-01
+
+2014-08-20    <delsart@localhost>
+	* src/FastJetInterfaceTool.cxx : copied crc64 functions here so
+	the tool can be used standalone
+	* no tag
+
+2014-07-25 David Adams
+	* cmt/Makefile.RootCore: Drop dep on fastjet-contrib.
+
+2014-07-17 David Adams
+	* JetRec-02-02-00
+	* JetFilter renamed to JetFilterTool.
+	* python/JetRecStandard.py: Drop pT filter from groomed_modifiers.
+	* python/JetToolSupport.py: Fix for renamed JetFilterTool.
+	* python/JetRecStandardTools.py: Drop standard fiter defs (jetfil*).
+	* share/run.py: Fix for renamed JetFilterTool.
+	* share/test_RunJetRec.py: Change internal jet timing level to 0.
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2014-07-17 David Adams
+	* runroot: Move this to JetRecExamples.
+	* util/jetrec.cxx: Move this to JetRecExamples.
+
+2014-07-17 David Adams
+	* cmt/Makefile.RootCore: Reorder deps (no effect).
+
+2014-07-16 David Adams
+	* JetRec-02-01-12
+	* share/test_RunJetRec.log.clean.ref: Update.
+
+2014-07-16 David Adams
+	* cmt/Makefile.RootCore: Drop set of no C++11 flags.
+	* runroot/out.root: Drop this.
+
+2014-07-15 David Adams
+	* JetRec-02-01-11
+	* JetRec/PseudoJetGetter.h: Add missing BOOST include.
+	* Root/MuonSegmentPseudoJetGetter.cxx: Add miss BOOST include.
+	* Root/JetFinder.cxx: Add flag NO_JET_VARIABLER to exclude code for
+	  variable-R jet finding.
+	* cmt/Makefile.RootCore: Set NO_JET_VARIABLER to work around
+	  problems with using fatjet-contrib in Root.
+	* runroot: Add this directory to test jet reco in root.
+
+2014-07-14 David Adams
+	* JetRec-02-01-10
+	* Requires JetMomentTools-00-02-24 or later.
+	* python/JetRecStandrdTools.py: Add moment builders:
+	  isolation and larhvcorr.
+	* share/RunJetRec.py: Add above moment builders. Latter
+	  is protected with flag.
+	* share/test_RunJetRec.py: Add dump of lrhvcorr attributes if
+	  flag is set.
+
+2014-07-14 David Adams
+	* JetRec-02-01-09
+	* python/JetToolSupport.py: Remove obsolete comment.
+	* share/JetRec_jobOptions.py: Fix code assigning container name for
+	  trigger.
+
+2014-07-03 David Adams
+	* JetRec-02-01-08
+	* share/cleanlog: Add this script that replaces fields expected to
+	  vary in a log file.
+	* test_RunJetRec.log.clean.ref: Add the log reference file.
+	* share/go: Add call to cleanlog.
+
+2014-07-03 David Adams
+	* JetRec-02-01-07
+	* python/JetRecStandard.py: Fix comment.
+	* python/JetToolSupport.py: Make useTriggerStore a function argument
+	  instead of menber data.
+	  Add trigjetrec, the list of jetrecs for tthe trigger. Now jetrecs
+	  only holds the list for offline.
+	  Add function argument isTrigger to both set the trigger store and to
+	  flag the jetrec should go to the trigger list.
+
+2014-06-23 David Adams
+	* JetRec-02-01-06
+	* cmt/requirements: Add dep on fastjet-contrib needed for the
+	  following.
+	* JetFinder: Add optio for variable-R finding.
+	* python/vrjets.py: Add this example of variable-R jet finding.
+
+2014-06-23 David Adams
+	* JetRec-02-01-05
+	* python/JetToolSupport.py: Add separate jet builders with and w/o area.
+	* python/JetRecStandardTools: Add separate jet builders with and w/o area.
+	* python/JetAlgorithm: Set flags for separate jet builders with and w/o area.
+
+2014-06-22    <delsart@localhost>
+	* python/JetToolSupport.py (JetToolManager.addJetFinder):
+	addFinder has an option to set the JetFinder.RandomOption
+	property.
+	* JetRecTool : can dump measured times in a txt file for further inspection.
+	* JetRec-02-01-04
+
+2014-06-17 David Adams
+	* JetRec-02-01-03
+
+2014-06-17 David Adams
+	* JetFromPseudojet: Improve attribute flags to provide separate
+	  control over standard and four-vector areas.
+	* util/jetrec.cxx: Tweak so jets are not found and displayed.
+
+2014-06-10 David Adams
+	* util/jetrec.cxx: Add ifdefs to avoid checkreq errors in Athena.
+
+2014-06-03 David Adams
+	* util/jetrec.cxx: Set verbose if 3rd CL arg is present.
+
+2014-06-03 David Adams
+	* util/jetrec.cxx: Make it less noisy.
+
+2014-06-03 David Adams
+	* JetFromPseudojet: Add check that jet constituent vector is valid
+	  (analysis release only).
+	* JetFinder: Add some DEBUG messages.
+	* util/jetrec.cxx: Add code for jet reconstruction.
+
+2014-06-02    <delsart@localhost>
+	* Root/JetFromPseudojet.cxx : Adapt to updated Jet ctor in xAODJet-00-01-02
+	* JetRec-02-01-02
+
+2014-05-29 David Adams
+	* Root/JetRecTool.cxx: Add some info messages to initialization.
+	* util/jetrec.cxx: Begin adding config of jet reco.
+
+2014-05-28 David Adams
+	* Root/JetFinder.cxx: Use flgs to enable compilation in 2.0.X.
+	* Root/JetRecTool.cxx: Use flgs to enable compilation in 2.0.X.
+	* util/jetrec.cxx: Chnage dumped APvector variable.
+
+2014-05-27 David Adams
+	* share/test_RunJetRec.py: Switch to public input file.
+	* share/pflowjets.py: Switch to public input file.
+
+2014-05-21 David Adams
+	* JetRec-02-01-01
+	* JetRecStandardTools: Add new pflow getters.
+	* JetRecStandardTools: Add new pflow  getter lists.
+	* share/pflowjets.py: Add this demo of pflow jet finding.
+
+2014-05-21 David Adams
+	* JetRec-02-01-00
+	* JetRecStandardTools: Add charge and pull.
+	* share/RunJetRec.py: Add charge and pull for topo jets.
+	* share/test_RunJetRec.py: Add dump of charge and pull for topo jets.
+	* share/myjets.py: Change syntax without effect.
+
+2014-05-21 David Adams
+	* JetRec-02-00-80
+	* share/JetRec_jobOptions.py: Change Antikt4EMTopo threshold from 7
+	  to 5 GeV.
+
+2014-05-21 David Adams
+	* JetRec-02-00-79
+	* JetFinder.cxx: Add option (RandomOption=1) to used run and event
+	  number as the seeds for active area.
+	  Add debug level messages with description of jet area.
+	* python/JetToolSupport.py: Set finder RandomOption=1.
+	* share/test_RunJetRec.py: Increase limit for verbose messages.
+
+2014-05-20 David Adams
+	* JetRec-02-00-78
+	* Root/JetRecTool.cxx: Minor changes in jet copy.
+	* python/JetToolSupport.py: Add addJetCopier.
+	* share/cpjets.py: Example options for copying and claibrating a jet
+	  collection.
+
+2014-05-20 David Adams
+	* JetRec-02-00-77
+	* runx/go: Add this xform test of full reco.
+
+2014-05-20 David Adams
+	* JetRec-02-00-76
+	* python/JetRecFlags.py: Drop applyCalibration. Add
+	  applyCalibrationName.
+	* python/JetRecStandard.py: Drop mod lists named offset*
+	  and change the meaning of calib* to depend on the value of
+	  jetFlags.applyCalibrationName.
+	* share/RunJetRec.py: Modify topo jets to use "calib" list of
+	  modifiers instead of "offset".
+	* share/test_RunJetRec.py: Add commented-out set of
+	  jetFlags.applyCalibrationName.
+	* share/JetRec_jobOptions.py: Modify topo jets to use "calib"
+	  list of modifiers instead of "offset".  Add commented-out
+	  set of jetFlags.applyCalibrationName.
+	* run/fullreco.py: Add commented-out set of
+	  jetFlags.applyCalibrationName.
+
+
+2014-05-20 David Adams
+	* JetRec-02-00-75
+	* share/test_RunJetRec.py: Change defult test file.
+	* share/go: Add argument to specify top options file.
+	* share/myjets.py: Add these options that demonmstrate user-level
+	  jet finding.
+	* cmt/requirements: Add myjets.py to published job options.
+
+2014-05-09 David Adams
+	* JetRec-02-00-74
+	* JetFinder: Fix label in log message.
+	* python/JetToolSupport.py: Add members to JetToolManager and
+	  arguments in addJetFinder to allow the user to separately
+	  set and override the finding and filtering pT thresholds.
+	* python/JetRecStandardTools.py: Add comment indicating the
+	  filters defined here are obsolete.
+	* python/JetRecStandard.py: Set low defaults for the pT thresholds.
+	  Drop use of filter for track and truth jets.
+	  Use "jetfilter" keyword in place of filters for topo jets.
+	* share/RunJetRec.py: Explicitly set thresholds in jet definition
+	  lines.
+	* share/JetRec_jobOptions.py: Explicitly set thresholds in jet
+	  definition lines.
+
+2014-05-09 David Adams
+	* JetRec-02-00-73
+	* python/JetRecStandard.py: Add track jet tagging to default jet
+	  building.
+	* share/test_RunJetRec.py: Drop use of flag to add track jet tagging
+	  as this is now done by default.
+
+2014-05-09 David Adams
+	* JetRec-02-00-72
+	* PseudoJetGetter: Modify so that the uncalibrated cluster four
+	  vector is used if the label begins with "EM".
+
+2014-05-09 David Adams
+	* JetRec-02-00-71
+	* JetDumper: Add dump of jet default four vector for name "" or
+	  "jetP4()".
+	* python/JetToolSupport.py: Change calib tool syntax from
+	  applyCalibrationTool to applyCalibrationTool:jes or offset.
+	* python/JetRecStandard.py: Populate list of modifiers including
+	  offset-only calibration. One name is "offset".
+	* share/test_RunJetRec.py: Add dump of "jetP4()" four-vector.
+	* share/RunJetRec.py: Add offset calib for all topo jet containers.
+	* share/JetRec_jobOptions.py: Switch to offset-only calibration for 
+	  all topo jet containers.
+
+2014-05-09 David Adams
+	* JetRec-02-00-70
+	* python/JetToolSupport.py: Switch to offset-only calibration.
+
+2014-05-05 David Adams
+	* cmt/Makefile.RootCore: Add dep on xAODEventInfo.
+	* share/test_RunJetRec.py: Disable debug messages.
+	* util/jetrec.cxx: Add ifdef's for checkreq.
+
+2014-05-02 David Adams
+	* cmt/Makefile.RootCore: Add dep on xAODEventInfo.
+	* JetDumper: Restore calls t to EL::dataID() in Root.
+	* JetRecTool: Use mutable pointer when recording Aux container.
+	  In Root, record main container as mutable.
+	* util/jetrec.cxx: Add this demo main program for Root.
+
+2014-04-30 David Adams
+	* cmt/requirements: Clean up.
+	* PseudoJetGetter: Use BOOST_AUTO.
+	* JetDumper: Use BOOST_FOREACH.
+	* JetToolRunner: Drop use of asg namespace.
+	* JetByVertexFinder: Use BOOST_AUTO and BOOST_FOREACH.
+
+2014-04-30 David Adams
+	* cmt/requirements: Clean up.
+	* JetToolRunner: Switch to BOOST_AUTO and switch to asg namespace
+	  for ToolHandle and ToolHandleArray.
+
+2014-04-30 David Adams
+	* cmt/requirements: Clean up.
+	* MuonSegmentPseudoJetGetter: Protect BOOST_AUTO with USE_BOOST_AUTO.
+
+2014-04-30 David Adams
+	* cmt/Makefile.RootCore: Add this.
+	* JetRecTool: Get tool handle fro AsgTools instead of Gaudi.
+	* JetToolRunner: Get tool handle fro AsgTools isntead of Gaudi.
+	* FastJetInterfaceTool: Move this from Root to src.
+	* MuonSegmentPseudoJetGetter: Switch from auto to BOOST_AUTO.
+
+2014-04-23 David Adams
+	* JetRec-02-00-69
+	* PseudoJetGetter: Add lists of input and output collection names.
+	* JetRecTool: Construct lists of input and output collection names and
+	  display these during initialization. Add initilization checks.
+	* python/JetRecFlags.py: Add flags additionalTopoGetters and
+	  containerNamePrefix.
+	* python/JetRecStandardTools.py: Fix container name
+	  GhostPseudoJetTracks --> PseudoJetGhostTracks.
+	  Add tools gakt3trackget and gakt4trackget.
+	* python/JetRecStandard.py: Add use of getters listed in
+	  jetFlags.additionalTopoGetters to add tagging with track jets.
+	* run/fullreco.py: Add commented-out use of
+	* share/RunJetRec.py: Add Run2AntiKt3PV0TrackJets.
+	* share/test_RunJetRec.py: Add flag (set false) to use
+	  jetFlags.additionalTopoGetters to add tagging with track jets.
+	  Drop display of non-existent APV GhostTruthWZ.
+	* share/go: Add grep of ERROR and WARNING.
+
+2014-04-23 David Adams
+	* JetRec-02-00-68
+	* python/JetToolSupport.py: Add special tool name "trackassoc".
+	  Add jetconst and check if for both this and truthassoc.
+	* python/JetRecStandard.py: Add trackassoc to the list of topo tools.
+	* share/RunJetRec.py: Add large-R truth jets.
+	* share/tett_RunJetRec.py: Display new large-R collections. Display
+	  ghost track associations.
+	* share/JetRec_jobOptions.py: Schedule truth and track before topo jets.
+
+2014-04-25    <delsart@localhost>
+	* python/JetRecUtils.py: merge from 19.0.1.x  branch. Add a
+	function to build a list of output jet containers in ESDtoAOD jobs.
+
+2014-04-23 David Adams
+	* JetDumper: Fiddle with display for linedetail > 2.
+	* python/JetToolSupport.py: Add support for modifier name truthassoc.
+	* python/JetRecStandard.py: Add truthassoc for topo jets.
+	* share/test_RunJetRec.py: Add dump of GhostTruthWZ and
+	  GhostTruthAssociation.
+
+2014-04-22 David Adams
+	* JetRec-02-00-67
+	* PseudoJetGetter: Move buildCUI to source file.
+	* test_RunJetRec.py: Add dump of PseudoJetTruthWZ and PseudoJetGhostTruth
+	  containers and moments GhostTruthPt and GhostTrackPt.
+
+2014-04-21 David Adams
+	* JetRec-02-00-66
+	* MassDropFilter: Drop this.
+	* JetSplitter: New name for mass drop filter tool.
+	* src/components/JetRec_entries: Update for tool name change.
+	* python/JetToolSupport.py: Update for tool name change.
+	* share/RunJetRec.py: Update for tool name change.
+	  Chnage jet contaienr name accordingly.
+	* share/test_RunJetRec.py: Update for tool/container name change.
+	* python/JetToolSupport.py: Update fo tool name change.
+	* python/JetToolSupport.py: Update fo tool name change.
+
+2014-04-21 David Adams
+	* JetRec-02-00-65
+	* fullreco.py: Add option to put eos files at $EOSDIR.
+
+2014-04-18 David Adams
+	* JetRec-02-00-64
+	* JetRecTool: Add timers.
+	* python/JetRecFlags.py: Add flags for timers: timeJetToolRunner
+	  and timeJetRecTool.
+	* python/JetToolSupport.py: Set JetRec timing flags with jetFlags.
+	* python/JetAlgorithm.py: Use JetFlags to set JetToolRunner timer.
+	* share/test_RunJetRec.py: Set timing flags.
+	* run/fullreco.py: Set timing flags.
+
+2014-04-17 David Adams
+	* JetRec-02-00-63
+	* python/JetRecStandardTools.py: Add Beta = 1.0 to encorr.
+
+2014-04-17 David Adams
+	* JetRec-02-00-62
+	* python/JetRecStandardTools.py: Add encorr, enery correlator.
+	* python/JetRecStandard: Add encorr.
+	* share/test_RunJetRec.py: Display moments, add energy correlators.
+	* JetDumper: Add flag to switch to exp dispaly for floats when value
+	  is large.
+
+2014-04-11 David Adams
+	* JetRec-02-00-61
+	* share/RunJetRec.py: Add variable to enable/disable ghost areas.
+	* share/test_RunJetRec.py: Change default input and event count.
+	* cmt/requirements: Add AtlasRoot.
+	* JetToolRunner: Add time report for total and each called tool.
+
+2014-04-09   <delsart@localhost>
+	* share/JetRec_jobOptions.py: Protect against no muon/tracks/clusters
+	* tag JetRec-02-00-60
+
+2014-04-07 David Adams
+	* JetRec-02-00-59
+	* share/JetRec_jobOptions.py: Change track jets from R=0.2, 0.3 to
+	  0.3, 0.4
+
+2014-04-01 David Adams
+	* JetRec-02-00-58
+	* Root/JetFinder.cxx: Add GhostArea to print.
+	* python/JetToolSupport.py: Change comments.
+	* share/RunJetRec.py: Add ghost area for topo jets.
+	* share/test_RunJetRec.py: Remove setting of jetFlags..
+	  Display ghost moments only for topo jets.
+	* share/JetRec_jobOptions.py: Drop Kt jets.
+	* run/fullreco.py: Remove CleanItemList_Rel19.py.
+
+2014-04-01    <delsart@localhost>
+
+	* python/JetToolSupport.py : Calculation of jet area optionnal
+	(true by default)
+	* share/JetRec_jobOptions.py: Calculate area only for cluster jets.
+
+	* python/JetRecFlags.py : add separateJetAlgs to decide if
+	grouping all top level jet tools into a single athena alg
+	(default) or not (useful for debugging).
+	* python/JetAlgorithm.py: make use of separateJetAlgs if set.
+
+	* Root/JetFromPseudojet.cxx : adapt to TopoEM -> EMTopo enum
+	change. Also avoid string comparisons on each jet to decided if
+	storing areas. Also correct wrong setting of jet areas.
+	* python/JetRecStandardTools.py: adapt to TopoEM -> EMTopo enum change
+
+	* tag JetRec-02-00-57
+
+
+2014-04-01 David Adams
+	* run/fullreco.py: Switch to the mu=40 input file.
+
+2014-04-01 David Adams
+	* JetRec-02-00-56
+	* share/JetRec_jobOptions.py: Drop exclusion of comshapes.
+
+2014-03-31 David Adams
+	* JetRec-02-00-55
+	* share/JetRec_jobOptions.py: Exclude comshapes.
+	* run/fullreco.py: Allow truth.
+
+2014-03-31 David Adams
+	* share/JetRec_jobOptions.py: Change message formatting.
+
+2014-03-31 David Adams
+	* share/test_RunJetRec.py: Drop exclusion of comshapes. Fix code shing
+	  the associated variables.
+	* share/JetRec_jobOptions.py: Add messages about truth flag.
+	* run/fullreco.py: Comment out jetFlags with no effect.
+
+2014-03-29 David Adams
+	* JetRec-02-00-54
+	* JetDumper: Add display of ELs for particle and MS vectors.
+	* python/JetRecFlags.py: Add skipTools--the list of modifiers to
+	  exclude.
+	* python/JetRecStandard.py: Add code to enable skip of modifiers
+	  using the new flag.
+	* share/RunJetRec.py: Add jetGrooming flag.
+	* share/test_RunJetRec.py: Protect dump with jetGrooming flag.
+	  Protect display of comshapes variables with the skipTools flag.
+	  Enable truth and skip comshapes (until segfault is fixed).
+	* run/fullreco.py: Change input file. Disable trigger. Enable FPEs.
+	  Skip comshapes (temporary we hope). Set debug level 0.
+
+2014-03-28 David Adams
+	* JetRec-02-00-53
+	* JetRecTool: Add IJetBuildTool interface.
+	* share/test_RunJetRec.py: Fix EvtMax.
+
+2014-03-27 David Adams
+	* JetRec-02-00-52
+	* JetFinder: Add call save cluster sequnces in event store.
+	* share/RunJetRec.py: Disable groomers.
+	* share/test_RunJetRec.py: Switch to longer AOD input file.
+	* run/fullreco.py: Add but don't use AOD input.
+
+2014-03-27 David Adams
+	* JetRec-02-00-51
+	* share/test_RunJetRec.py: Re-enable use of calo quality tool.
+	  Change flag checks to fn calls.
+	* run/fullreco.py: Enable mu=40 input and use of CaloQuality tool.
+
+2014-03-27 David Adams
+	* JetRec-02-00-50
+
+2014-03-27 David Adams
+	* JetRec-02-00-49
+	* JetToolRunner: Add this top-level jet reco tool.
+	* src/components/JetRec_entries: Add JetToolRunner.
+	* Root/JetRecTool.cxx: Fix formatting.
+	* python/JetAlgorithm.py: Modify to create JetToolRunner jetrun
+	  and put jetrec tools there instead of in algorithm.
+	* python/JetRecStandardTools.py: Drop import of JetAlgorithm.
+	* share/test_RunJetRec.py: Expand comment.
+
+2014-03-26 David Adams
+	* JetRec-02-00-48
+	* share/test_RunJetRec.py: Protect dump of CaloQuality fields with
+	  CaloQuality flag.
+
+2014-03-26 David Adams
+	* JetRec-02-00-47
+	* python/JetRecFlags.py: Add useCaloQualityTool
+	* python/JetRecStandard.py: Use useCaloQualityTool flag.
+	* share/test_RunJetRec.py: Add flgs to turn off dumping.
+	* share/go: Add performance monitoring.
+
+2014-03-26 David Adams
+	* JetRec-02-00-46
+
+2014-03-26 David Adams
+	* share/go: Add time.
+	* run/go: Add time.
+	* share/test_RunJetRec.py: Set jetFlags.useTruth to False.
+	  Protect dumping to allow this.
+
+2014-03-26 David Adams
+	* python/JetAlgorithm.py: Fix and enhnce use of jetFlags.debug.
+	* python/JetRecStandard.py: Inconsequential change in formatting.
+	* share/test_RunJetRec.py: Add mu=40 file. It is now enabled.
+	* run/fullreco.py: Add options to read mu=40 file and to disable jet
+	  finding. Both of these are off.
+
+2014-03-26 Walter Lampl <walter.lampl@ cern.ch>
+	* protect for no-truth case
+	* tag JetRec-02-00-45
+
+2014-03-25 David Adams
+	* JetRec-02-00-44
+	* python/JetRecFlags.py: Add useCells.
+	* python/JetToolSupport.py: Make last two arguments optional for
+	  addJetFinder and last argument optional for adding groomers.
+	* python/JetRecStandard.py: Add modifiers maps entries to allow
+	  setting from input type.
+	* python/JetAlgorithm.py: Add this module to creae the jet algorithm.
+	* share/RunJetRec.py: Make jet definitions shorter and use algorithm
+	  module
+	* share/JetRec_jobOptions.py: Make jet definitions shorter and use algorithm
+	  module
+
+2014-03-25 David Adams
+	* JetRec-02-00-43
+	* python/JetToolSupport.py: Drop definition of jtm (moved to
+	  JetRecStandard).  Add maps for getter and modifier lists.
+	* python/JetRecStandardTools.py: Update for new location of jtm.
+	* python/JetRecStandard.py: Add this module with the new jtm that
+	  includes ptmin and populated getter and modifier lists.
+	* share/RunJetRec.py: Modify to use new jtm.
+	* share/test_RunJetRec.py: Modify to use new jtm.
+	* share/JetRec_jobOptions.py: Modify to use new jtm.
+
+2014-03-24 David Adams
+	* JetRec-02-00-42
+	* share/JetRec_jobOptions.py: Reformat.
+	* run/fullreco.py: Enable jet calibration.
+	* python/JetRecFlags.py: Enable jet calibration by default.
+
+2014-03-24    <delsart@localhost>
+	* python/JetRecFlags.py : add applyCalibration flag (False by defalut) 
+	* share/JetRec_jobOptions.py: optionnaly apply calibration
+	* tag JetRec-02-00-41
+
+2014-03-21 David Adams
+	* JetRec-02-00-40
+	* python/JetRecFlags.py: Add useTopo. Make useTruth true by default.
+	* share/JetRec_jobOptions.py: Use useTopo to control topojet finding.
+	  Set useTruth false if re.dotruth is false.
+	* run/fullreco.py: Make useTopo explicit.
+	* runget: Add this dir to run truth-only jet reco with RecExCommon.
+
+2014-03-21 David Adams
+	* JetRec-02-00-39
+	* JetDumper: Ad IParticle to list of Element links attempted.
+	* JetByVertexFinder: Change attribute OriginIndex to OriginVertex.
+	* JetByVertexFinder: Change attribute OriginIndex to OriginVertex.
+	* JetFromPseudojet: Switch from setAttribute to setAssociatedObject.
+	  But comment out change b/c EL is not recognized as Jet in dumper.
+	* test_RunJetRec: Display OriginVertex instead of OriginIndex.
+
+2014-03-20 David Adams
+	* JetRec-02-00-38
+	* run/fullreco.py: Disable taus.
+
+2014-03-20    <delsart@localhost>
+	* python/JetRecStandardTools.py : minor change to track config
+
+2014-03-20 David Adams
+	* python/JetRecFlags.py: Add usePflow.
+	* python/JetRecStandardTools.py: Add a neutral pflow getter.
+	* share/RunJetRec.py: Change initial pT theshold to 2 GeV.
+	* share/JetRec_jobOptions.py: Chang initial pT theshold to 2 GeV.
+	* run/fullreco.py: Enable useTracks, add usePflow (enabled).
+
+2014-03-19 David Adams
+	* JetRec-02-00-37
+	* python/JetRecStandardTools.py: Add COM shapes tool.
+	* share/RunJetRec.py: Add COM shapes tool.
+	* share/test_RunJetRec.py: Add COM shapes tool.
+	* share/JetRec_jobOptions.py: Add COM shapes tool.
+
+2014-03-19 David Adams
+	* JetRec-02-00-36
+	* share/test_RunJetRec.py: Increase message limit.
+	* run/fullreco.py: Disable muon segments because there is a
+	  problem writing these out.
+
+2014-03-19 David Adams
+	* share/RunJetRec.py: Change jet threshold to 10 GeV.
+	* share/JetRec_jobOptions.py: Bring in all modifiers and getters from
+	  RunJetRec. Set list of collections to DC14 proposal (except pflow).
+
+2014-03-18 David Adams
+	* JetRec-02-00-35
+	* JetDumper: add Prefix flag.
+	* python/JetRecStandardTools.py: Rename truthWZ to truthwz.
+	* share/RunJetRec.py: Add TruthWZ jets.
+	* share/test_RunJetRec.py: Add TruthWZ jets and dump prefix flag.
+
+2014-03-18    <delsart@localhost>
+	* python/JetRecStandardTools.py: added truth tools for TruthWZ
+	* tag JetRec-02-00-34
+
+2014-03-18 David Adams
+	* JetRec-02-00-33
+	* JetByVertexFinder: Add this tool to find jets by vertex.
+	* src/components/JetRec_entries.cxx: Add preceding.
+	* JetDumper: Add collection name to object line.
+	  Add property prefix not yet implemented.
+	* python/JetToolSupport.py: Add option for ZTrack and PV0Track jets.
+	* share/RunJetRec.py: Add ZTrack and PV0Track jets.
+	* share/test_RunJetRec.py: Add ZTrack and PV0Track jets.
+
+2014-03-17 David Adams
+	* JetRec-02-00-32
+	* MuonSegmentPseudoJetGetter: Add this.
+	* src/components/JetRec_entries.cxx: Add preceding.
+	* JetDumper: Add support for muon segments.
+	* cmt/requirements: Add dependence on muons.
+	* python/JetRecFlags.py: Add useMuonSegments
+	* python/JetRecStandardTools.py: Add muon segment getter.
+	* share/RunJetRec.py: Add muon segments to top jets.
+	* share/test_RunJetRec.py: Add dump of muon segment info.
+
+2014-03-17    <delsart@localhost>
+	* Root/JetFromPseudojet.cxx : get phi in [-pi ,pi] from fastjet.
+	* tag JetRec-02-00-31
+
+2014-03-17 David Adams
+	* share/test_RunJetRec.py: Fix variable names.
+	* share/RunJetRec.py: Add useTracks protection for track getter.
+	* run/fullreco.py: New top options from Vakho.
+
+2014-03-14 David Adams
+	* JetRec-02-00-30
+	* JetFromPseudojet: Update for new constituent enum names.
+	* PseudojetGetter: Add explicit set of constituent enum names.
+	* JetFinding: Remove setting of jet constituent-scale momenta--this
+	  is done in JetFromPseudojet.
+	* JetDumper: Update for new Jet associate particle interface.
+	* cmt/requirements: Fix dep and remove executable flag.
+
+2014-03-13 David Adams
+	* JetRec-02-00-29
+	* python/JetRecStandardTools.py: Move jet calibration out.
+	* python/JetToolSupport.py: Add string-triggered addition of
+	  jet calibration.
+	* share/RunJetRec.py: Add separate modifier list with calibration
+	  string. Not yet used for any collections.
+	* share/test_RunJetRec.py: Disable debug flags.
+
+2014-03-13 David Adams
+	* JetRec-02-00-28
+	* python/JetToolSupport.py: Add the vertex name.
+	* python/JetRecStandardTools.py: Add tracking tools.
+	* JetDumper: Add support for vector<int> and EL<Vertex>
+	* share/RunJetRec: Add tracking tools.
+	* share/test_RunJetRec: Add tracking tools.
+	* share/JetRec_jobOptions.py: Add missing cells and BCH corr.
+
+2014-03-12 David Adams
+	* JetRec-02-00-27
+	* share/JetRec_jobOptions.py: Add CaloQuality tool.
+	* run/go: Add dump of produced event data file.
+
+2014-03-12 David Adams
+	* JetRec-02-00-26
+	* JetAlgorithm: Add a debug line.
+	* python/JetRecFlags.py: Switch to camelCase, add useTracks.
+	* python/JetRecStandardTools.py: Fix JetCaloQualityTool, modify
+	  for change in flags. Change vertex name.
+	* share/fulreco.py: Delete.
+	* run: Create this directory with new fullreco.py for testing
+	  runnning with RecExCommon.
+	* share/RunJetRec.py: Protect with useTracks, modify for change in
+	  flags.
+	* share/RunJetRec.py: Protect with useTracks, modify for change in
+	  flags. Add and use option to override vertex name.
+	* share/JetRec_jobOptions.py: Protect with useTracks, modify for
+	  change flags. Add and use option to override vertex name.
+	  Add more debugging info.
+
+2014-03-11 David Adams
+	* JetRec-02-00-24
+	* JetDumper: Switch from xAOD::Jet::FourMom_t FourVector to
+	  xAOD::JetFourMom_t (IParticle to Root).
+	* JetFromPseudojet: Switch from xAOD::Jet::FourMom_t FourVector to
+	  xAOD::JetFourMom_t (IParticle to Root).
+	* python/JetRecStandardTools.py: Add JetCaloQualityTool.
+	* share/RunJetRec.py: Add JetCaloQualityTool.
+	* share/test_RunJetRec.py: Add JetCaloQualityTool variables and
+	  display four vectors instead of components.
+
+2014-03-11 David Adams
+	* JetRec-02-00-23
+	* share/test_RunJetRec.py: Add more moments.
+	* share/JetRec_jobOptions.py: Add more jet collections.
+	* share/fullreco.py: Modify to eliminate some errors.
+
+2014-03-10 David Adams
+	* JetRec-02-00-22
+	* JetFromPseudojet: Add jet type.
+	* JetFinder: Move type, mometa at scales to JetFromPseudojet.
+	* python/JetRecStandardTools.py: Add track stuff.
+	* python/JetRecFlags.py: Add UseInDetTrackSelection.
+	* share/RunJetRec.py: Add track jets and track ghosts.
+	* JetRecStandardTools.py: Move from share to python.
+
+2014-03-10    <delsart@localhost>
+	* share/JetRec_jobOptions.py: fixed.
+	* tag JetRec-02-00-21
+	* Root/JetFinder.cxx : Also the jetfinding and uncalib scales.
+	* tag JetRec-02-00-20
+
+2014-03-07 David Adams
+	* JetRec-02-00-19
+	* JetRecStandardTools.py: Move from share to python.
+	* share/JetRec_jobOptions.py: Change JetRecStandardTools to import.
+	* share/RunJetRec.py: Change JetRecStandardTools to import and
+	  add missing import of JetAlgorithm.
+	* cmt/requirements: Fix job option list to only include
+	  JetRec_jobOptions.py
+
+2014-03-06 David Adams
+	* JetRec-02-00-17
+	* share/JetRecStandardTools.py: Add track selection, planar flow
+	  and Kt mass drop tools.
+	* share/RunJetRec.py: Add planar flow and Kt mass drop tools.
+	* share/test_RunJetRec.py: Add planar flow and Kt mass drop variables.
+
+2014-03-06    <delsart@localhost>
+	* Root/FastJetInterfaceTool.cxx : fix a small memory leak. Thanks
+	to Simon Head.
+	* tag JetRec-02-00-16
+
+2014-03-06 David Adams
+	* JetRec-02-00-15
+	* share/JetRecStandardTools.py: Rename of JetRecTools.py--Steven
+	  was complaining of confict with package name.
+	* share/RunJetRec.py: Update for above rename plus add dir to path.
+	* share/JetRec_jobOptions.py: Update for above rename plus add dir to path.
+
+2014-03-05 David Adams
+	* JetRec-02-00-14
+	* JetDumper: Add support for associated particle vectors.
+	* python/JetRecFlags.py: Add UseTruth.
+	* share/JetRecTools.py: Add truth and ghost truth.
+	* share/RunJetRec.py: Add truth jets and truth ghosts.
+	* share/test_RunJetRec.py: Add truth jets and particle vector display.
+
+2014-03-03    <delsart@localhost> 
+	* re-added python/FastJetInterfaceConfig.py
+
+2014-03-04 David Adams
+	* JetRec-02-00-13
+	* python/JetToolSupport.py: Fix prunung and trimmin.
+	* share/test_RunJetRec.py: Add Parent and InputType to displayed moments.
+	* share/JetRecTools.py: Add EM clusters, rename old cluster builder.
+	* share/JetRec_jobOptions.py: Adapt to the previous.
+	* share/RunJetRec.py: Add a collection of EMTopo jets.
+	* share/test_RunJetRec.py: Add dump of of EMTopo jets.
+	* JetRec/JetDumper.h: Add some comments.
+	* PseudoJetGetter: Add method to return label (from property).
+	* JetFinder: Add input type to interface and use it on created jets.
+	* JetRecTool: Deduce input type from name of first PseudoJet getter
+	  and pass it to the jet finder.
+
+2014-03-04 David Adams
+	* JetRec-02-00-12
+	* JetTrimmer: Add moments.
+	* JetPruner: Add moments.
+	* python/JetToolSupport.py: Add support for trimming and pruning.
+	* share/RunJetRec.py: Add pruned and trimmed jets.
+	* share/test_RunJetRec.py: Add dump of pruned and trimmed jets and
+	  all groomed moments.
+	* MasDropFilter: Add moments. Rename configuration parameters.
+	* share/fullreco.py: Disable egamma.
+
+2014-03-03 David Adams
+	* JetRec-02-00-11
+
+2014-03-03 David Adams
+	* python/JetRecFlags.py: Add Debug flag.
+	* share/JetRec_jobOptions.py: Use above flag to control messge level.
+	* share/fullreco.py: Add explict use of JetFlags.Enable and
+	  jetFlags.Debug.
+
+2014-03-03 David Adams
+	* python/*Config.py: Remove these tool configuration files.
+	* python/JetToolSupport.py: Improve the documentaion in this file.
+	* cmt/requirements: Declare the job options used by RecExCommon.
+
+2014-03-03 David Adams
+	* python/JetToolSupport.py: Fix addition of mass drop.
+	* JetRecTool: Change comments an message level.
+
+2014-03-03 David Adams
+	* python/JetToolSupport.py: Add lock of tools and add
+	  method to change output level of tools even if locked.
+	* share/JetRec_jobOptions.py: Remove executable flag,
+	  use the previous for changing output levels,
+	  change the list of jet collections.
+
+2014-03-03    <delsart@localhost>
+	* JetRec/PseudoJetGetter.h : m_ghostscale type changed to double
+	* JetRec-02-00-10
+
+2014-03-02 David Adams
+	* share/JetRec_jobOptions.py: Drop explicit include of jet job
+	options.
+	* share/fullreco.py: Improve output stream definition.
+
+2014-02-28 David Adams
+	* python/JetRecFlags.py: Add this minima flags file.
+	* share/JetRec_jobOptions.py: Jet-finding job options for use in
+	  RecExCommon.
+	* share/fullreco: Top level options that invoke RecExCommon and jet
+	  finding.
+	* share/JetRecTools.py: Remove broken applyJetCalibration.
+	* share/RunJetRec.py: Remove broken applyJetCalibration.
+
+2014-02-28    <delsart@localhost>
+	* modified PseudoJetGetter so one can sub-class how CUI is created. 
+	* JetRec-02-00-09
+	
+2014-02-27 David Adams
+	* PseudoJetGetter: Fix caching of pseudojets.
+	* RecJetTool: Fix comment.
+
+2014-02-27 David Adams
+	* JetFinder: Fix spelling in error message.
+	* JetToolManager: Fix set and use of jet builder.
+	* JetRecTools.py: Fix registration of too manager.
+	* RecJetTool, test_RecJetTool: Chnage jet collection naming convention.
+
+2014-02-27 David Adams
+	* RecJetTool: Fix recording of Aux container to allow possibility of
+	  trigger version.
+	* JetPruner: Fix compiler warning.
+	* python/JetToolSupport.py: Add finding and grooming to jet tool manager.
+	* share: Update of configuration scripts to use new features of the JTM.
+
+2014-02-26 David Adams
+	* share: More update of configuration scripts.
+
+2014-02-25 David Adams
+	* share/JetRecTools.py: Add these options to define low level tools and
+	  record them in the jet tool manager.
+	* share/RuneJetReco.py: Begin mod to used jet tool manager and
+	  JetRecTools.
+	* python/JetToolSupport.py: Add this definition of jet tool manager.
+
+2014-02-25    <delsart@localhost>
+	* PseudoJetGetter: minor modif to allow sub-classing
+	* added some python config modules as a first draft
+	
+
+2014-02-23    <delsart@localhost>
+	* re-added python/FastJetInterfaceConfig.py 
+	* tag JetRec-02-00-08
+
+2014-02-20 David Adams <dladams at bnl.gov>
+	* PseudoJetGetter: Add GhostScale property and modify code to use this
+	  to flag and scale ghosts.
+	* JetDumper: Add display of "ghost" when dumping psuedojet ghosts.
+	* share/run.py: Fix for new location of substructure moment builders.
+	  Add (default unused) option to create some test ghosts.
+	* share/RunJetRec.py: Add set of GhostScale to zero.
+
+2014-02-20 David Adams <dladams at bnl.gov>
+	* PseudoJetGetter: Fix doxygen comment.
+
+2014-02-20 David Adams <dladams at bnl.gov>
+	* share/RunJetRec.py: Update for new location of substructure moment
+	  builders.
+	* JetFromPseudojet: Add new include required by xAODJet.
+	* PseudoJetGetter.h: Add some doxygen.
+
+2014-02-19 David Adams <dladams at bnl.gov>
+	* MassDropFilter: Fix declaration of property BDRS.
+
+2014-02-18 David Adams <dladams at bnl.gov>
+	* PseudoJetGetter: Add Doxgen comments.
+	* mainpage.h: Begin switchover for run 2.
+
+2014-02-18 David Adams <dladams at bnl.gov>
+	* JetFromPseudojet: Add parent jet properties.
+	* JetTrimmer: Modify to set parent properties in build tool.
+	* JetPruner: Modify to set parent properties in build tool.
+	* MassDropFilter: Modify to set parent properties in build tool.
+
+2014-02-18 David Adams <dladams at bnl.gov>
+	* JetPruner: Add this.
+	* JetTrimmer: Remove unused includes.
+	* JetFinder.h: Fix comments.
+
+2014-02-18 David Adams <dladams at bnl.gov>
+	* JetTrimmer: Add this.
+	* JetDumper: Add dump of vector<float>.
+	* share/RunJetRec.py: Add widht and KtDeltaR tools.
+
+2014-02-10 David Adams <dladams at bnl.gov>
+	* JetDumper: Add vector<float> list.
+	* share/RunJetReco: Add use of JetWidthTool and KtDeltaRTool.
+	* share/test_RunJetReco: Add dump of JetWidthTool and KtDeltaRTool
+	  properties.
+
+2014-02-12 S. Schramm
+	* share/run.py: Added KtDeltaRTool and JetWidthTool to run/dump
+	* src/components/JetRec_entries.cxx: Added FastJetInterfaceTool factory
+
+2014-02-10 David Adams <dladams at bnl.gov>
+	* JetRecTool: Add log messages.
+	* MassDropFilter: Add attribute for Parent jet.
+	* JetDumber: Add option to display element link attributes.
+	* share/run.py: Display above parent.
+	* share/RunJetRec.py: Add new substructure moments.
+	* share/test_RunJetRec.py: Add new substructure moments.
+
+2014-02-10 David Adams <dladams at bnl.gov>
+	* share/run.py: Switch to newer cluster input file from
+	  Pierre-Antoine.
+	* share/AtlasReco.py: Add this full reco job options file.
+	  Not yet working.
+	* python/*: Remove these run 1 files.
+
+2014-02-07 David Adams <dladams at bnl.gov>
+	* JetFinder: Switch to FastJetUtils utilities for converting jet
+	  algorithm enums ATLAS <--> fastjet.
+
+2014-02-07 David Adams <dladams at bnl.gov>
+	* JetFromPseudojet: Modify to extract cluster sequence for jets w/o
+	  pseuodojets.
+	* JetFinder: Change attribute names to match xAOD::Jet conventions and
+	  use those setters.
+	* MassDropFilter: Change copied attribute names to match xAOD::Jet
+	  conventions and use those setters.
+	* share/* : Update for above attribute names.
+
+2014-02-07    <delsart@localhost>
+	* JetModifierBase moved from SingleJetModifierBase
+	* tag JetRec-02-00-07
+
+2014-02-06 David Adams <dladams at bnl.gov>
+	* share/RunJetRec.py: Rename from share/JetRec.py to avoid name conflict.
+	* share/test_RunJetRec.py: Rename from share/test_JetRec.py to avoid name conflict.
+
+2014-02-05    <delsart@localhost>
+	* cmt/requirements: make dual_use_library so base tools are
+	available in other packages.
+	* tag JetRec-02-00-06
+
+2014-02-04    <delsart@localhost>
+	* SingleJetModifierBase.h added.
+	* tag JetRec-02-00-05
+
+2014-01-29 David Adams <dladams at bnl.gov>
+	* MassDropFilter: Add copy of old jet attributes.
+	  Fix prefix for no-CUI pseudojets.
+	* JetDumper: Add support for explicit string moments.
+	* JetFinder: Add moments for alg, radius and ghost area.
+	* share/run.py: Add new attributes to dump.
+	* share/JetRec.py: Add these job options for reconstruction.
+	* share/test_JetRec.py: Add these options to test JetRec.
+
+2014-01-29   Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+	* tag latest changes
+	* JetRec-02-00-04
+
+2014-01-29 David Adams <dladams at bnl.gov>
+	* JetDumper: Move some non-templated code from heder to source.
+	  Fix prefix for no-CUI pseudojets.
+	* JetFromPseudojet: Change return type to Jet*.
+	* MassDropFilter: Add attributes: DRFilt, MuFilt, YFilt.
+	  Add dump of constituents for VERBOSE.
+	* share/run.py: Add new attributes to dump.
+
+2014-01-28 David Adams <dladams at bnl.gov>
+	* JetFromPseudojet: Include xAODJet/Jet_PseudoJet.icc.
+	* JetFinder: Remove unused code.
+	* JetRecTool: Add support for groomers.
+	* MassDropFilter: Add this grooming tool. Needs work.
+	* share/run.py: Add use of grooming tool.
+
+2014-01-27 David Adams <dladams at bnl.gov>
+	* JetFromPseudojet: Add this too to construct jets from pseudojets.
+	* JetFinder: Modify to use JetFromPseudojet.
+	* share/run.py: Modify to use JetFromPseudojet.
+
+2014-01-27 David Adams <dladams at bnl.gov>
+	* Add flag and support for using jet trig Aux store.
+
+2014-01-27 David Adams <dladams at bnl.gov>
+	* Switch to RootCore package structure.
+
+2014-01-26 David Adams <dladams at bnl.gov>
+	* JetRecTool: Change return of build from pair to JetContainer.
+	* JetDumper: Tweak formatting. Fix dump of single object (untested).
+
+2014-01-24 David Adams <dladams at bnl.gov>
+	* JetRecTool: Add separate method to build jets.
+
+2014-01-24 David Adams <dladams at bnl.gov>
+	* JetDumper: Add support for four-vector attributes.
+	* JetFinder: Add active area ghosts and moments.
+	* JetRecTool: Add print of jet finder in print.
+	* share/run.py: Add active area calculation to jet and add dump of
+	  moments to 2nd dumper.
+
+2014-01-21 David Adams <dladams at bnl.gov>
+	* JetRecTool: Add option to copy an input jet collection.
+	  Organize and document job options.
+	  Make modifiers public.
+	* JetFilter: Formating and comments.
+	* PseudoJetGetter: Make pseudocluster cluster mass zero by
+	  using p4() instead of pt, eta, etc.
+
+2014-01-21    <delsart@localhost>
+	* JetRec-02-00-03	
+	* src/PseudoJetGetter.cxx (get): attempt to fill collection before
+	recording in SG. Otherwise crash because of double deletion
+	readded FastJetInterfaceTool.
+
+2014-01-15    <delsart@localhost>
+	* JetRec-02-00-02	
+	* src/JetRecTool.cxx: enabled modifiers
+	* src/JetFinder.cxx : adapted to new Jet::setPseudoJet function
+	* added preliminary JetFilter and JetSorter
+
+2014-01-14 David Adams <dladams at bnl.gov>
+	* JetRec-02-00-01
+	* cmt/requirements: Update.
+	* JetRec/classdef.h: Remove. Replaced by JetEDM/PseudoJetVector.
+	* JetDumper: Add label to display of pseudojets.
+	* ConstituentUserInfo: Drop this.
+	* PseudoJetGetter: Switch to IndexedConstituentUserInfo.
+	* JetFiller: Start using JetConstituentFiller.
+
+2014-01-13 David Adams <dladams at bnl.gov>
+	* cmt/requirements: Add JetEDM depency.
+	* JetRec/classdef.h: Remove. Replaced by JetEDM/PseudoJetVector.
+	* JetDumper: Remove PseudoJetList references.
+	  Add pseudojet UI label to display lines.
+	* JetFinder: Remove PseudoJetList references. Fix include of classdef.
+	* PseudoJetGetter: Fix include of classdef.
+
+2014-01-13 David Adams <dladams at bnl.gov>
+	* ConstituentUserInfo: Simplify and add label.
+	* PseudoJetGetter: Update for the above change.
+
+2014-01-10 David Adams <dladams at bnl.gov>
+	* Get get finding working.
+	* JetFinder: Add this.
+
+2014-01-10 David Adams <dladams at bnl.gov>
+	* PseudoJetGetter: Add initialize.
+
+2014-01-09 David Adams <dladams at bnl.gov>
+	* Start over for run 2.
+	* src/athena: JetAlgorithm: top level reco algorithm calls a list
+	  of execute tools.
+	* JetRecTool: Top level execute tool for jet reconstruction. Partly
+	  implemented.
+	* JetDumper: Tool to display jets, clusters or pseudojets.
+	* PseudoJetGetter: Tool to construct pseudojets from a cluster
+	  or jet collection.
+	* ConstituentUserInfo: CUI for pseudojets. This should be moved
+	  elsewhere.
+	* classdef.h: Class def for vector<PseudoJet>. This should be moved
+	  elsewhere.
+	* share/run.py: Top level job options to run reconstruction.
+
+2013-12-16 Walter Lampl <walter.lampl@ cern.ch>
+	* fix jobO bug
+	* tag JetRec-01-02-87
+
+2013-12-11 Steven Schramm
+	* python/TrackSelectionForJets.py: updated the JetVtxTrackHelper
+	setup (added extrapolator ToolHandle)
+	* tag JetRec-01-02-86
+
+2013-11-15    <delsart@lpsc1120x.in2p3.fr>
+
+	* python/JetRec_defaults.py: using the latest calibration from
+	ApplyJetCalibration
+	* tag JetRec-01-02-85
+
+2013-09-11  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py : fixing config bug in unusual situation.
+	* src/JetGlobalEventSetup.cxx : removed unused  MsgStream instance 
+	* tag JetRec-01-02-84
+
+2013-08-11  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* JetGetters.py, JetFastJetFinderTool, JetAlgorithm : setting the
+	fastjet pointers in the Jet object is false by default, unless the
+	input is not tracks. Temporaray hack to avoid incompatible track
+	jet finding procedure.
+	* tag JetRec-01-02-83
+
+2013-07-31  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* JetAlgorithm and JetFastJetFinderTool : set the fastjet ptrs
+	into the Jet object. 
+	* tag JetRec-01-02-82	
+
+2013-07-09  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* src/FastJetInterfaceTool.cxx : definite fix for ghost area
+	random seeds  
+	* tag JetRec-01-02-81
+	
+2013-03-14  P-A Delsart  <delsart@localhost.localdomain>
+
+	* python/JetFinderConfig.py (getFastKt): merging FastJet3 migration
+	* tag JetRec-01-02-80
+
+2013-02-18  P-A Delsart  <delsart@localhost.localdomain>
+
+	* python/JetRec_defaults.py : fix bug when scheduling non-standard jet collections.
+	* tag JetRec-01-02-79
+	
+	* some config fixes (?? entry was missing)
+	* tag JetRec-01-02-78
+
+2013-01-16  delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py : propagate used AlgSequence to all requested
+	getters (ex: truth getters).
+	* tag JetRec-01-02-77	
+
+2013-01-11  delsart  <delsart@localhost.localdomain>
+
+	* FastJetInterfaceTool.h/cxx: porting reproducibility fix for area
+	calculation from -68-branch
+	* tag JetRec-01-02-76	
+	
+2013-01-12  delsart  <delsart@localhost.localdomain>
+
+	* python/TrackSelectionForJets.py: fix config bug (missing
+	ToolSvc)
+	* tag JetRec-01-02-75
+	
+2013-01-10  delsart  <delsart@localhost.localdomain>
+
+	* python/TrackSelectionForJets.py adding tracksAvailableForJets()
+	test function.
+	* tag JetRec-01-02-74
+	
+2013-01-07  delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py (getStandardInputTools): small config bug fix
+	* tag JetRec-01-02-73
+	
+2012-12-27  delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py: more improvements to moment configuration.
+	* tag JetRec-01-02-72	
+
+2012-12-20  delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py : fix bug with new moemnt config  
+	* python/JetMomentGetter.py : adding getJetMomentAlgorithm
+	* tag JetRec-01-02-71
+
+2012-12-18  delsart  <delsart@localhost.localdomain>
+
+	* Re-worked jet moment configuration. PAr of it is deported in JetMomentTools
+	* added standard track jet configuration.
+	* tag JetRec-01-02-70
+	
+2012-11-07  sschramm <steven.schramm AT cern.ch>
+	* tag JetRec-01-02-69
+        * python/JetFinderConfig.py        : Changed SIS, CMS, and kt-style jets to use a new unified FastJet interface
+        * python/FastJetInterfaceConfig.py : Added extra SIS and CMS parameters to the FastJet interface
+        * JetRec/FastJetInterfaceTool.h    : Added new methods and variables relating to SIS cone and CMS cone parameters
+        * src/FastJetInterfaceTool.cxx     : Added support for SIS cone and CMS cone within the unified FastJet interface
+
+2012-11-02  sschramm <steven.schramm AT cern.ch>
+        * JetRec/JetFastJetFinderTool.h : Changed to use the new FastJetInterfaceTool
+        * JetRec/FastJetInterfaceTool.h : Added methods to allow the user to get the jet definition and the jet area definition
+        * src/JetFastJetFinderTool.cxx  : Changed to use the new FastJetInterfaceTool
+        * src/FastJetInterfaceTool.cxx  : Added methods to allow the user to get the jet definition and the jet area definition
+        * python/JetFinderConfig.py     : Changed FastKt jets to use the new FastJetInterface configuration format
+
+2012-10-17  delsart  <delsart@localhost.localdomain>
+
+	* src/JetFastJetFinderTool.cxx : adding area4vec in Voronoi 2nd
+	area calculation.
+	* tagged JetRec-01-02-67	
+
+	* JetFastJetFinderTool : add a second (voronoi) area calculation
+	optional when running passive area.
+	* minor python config improvements
+	* tagged JetRec-01-02-66	
+
+2012-09-24  delsart  <delsart@localhost.localdomain>
+
+	* python/TrackSelectionForJets.py (setupTrackSelectorTool): Using
+	ToolSvc.InDetExtrapolator as extrapolator tool for jets. Avoids
+	infinite loops.
+	* tagged JetRec-01-02-65
+
+2012-09-14  delsart  <delsart@localhost.localdomain>
+
+	* python/TrackSelectionForJets.py (setupTrackSelectorTool):
+	IPz0Max= 1e15 (i.e. disable the cut)
+	* tagged JetRec-01-02-64
+	
+2012-09-12  delsart  <delsart@localhost.localdomain>
+
+	* python/TrackSelectionForJets.py : minPt = 0.5 GeV
+	* tagged JetRec-01-02-63
+	
+2012-09-04  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* src/JetRemoveConstituents.cxx: adding the ClearSGProxy option to avoid bugs due to
+	simultaneous use of removed JetColl and AddressRemapingSvc. See https://savannah.cern.ch/bugs/?96730
+	* tagged JetRec-01-02-62
+
+2012-08-30  sschramm  <steven.schramm AT cern.ch>
+
+	* python/FastJetInterfaceConfig.py: Changed default inclusive
+	pt cut from 20 GeV to 0 GeV.
+	* tagged JetRec-01-02-61
+
+2012-08-20  delsart  <delsart@localhost.localdomain>
+
+	* src/JetRemoveConstituents.cxx: add option to delete SG proxy of
+	old collections. Used for Tower to avoid strange bug during AOD
+	filtering jobs. See bug 96730
+	* tagged JetRec-01-02-60
+
+2012-08-17  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* apply clhep2 patches
+	* tagged JetRec-01-02-59
+
+2012-07-08  Peter Loch <loch AT physics.arizona,edu>
+	* fixed FastJetInterfaceTool bug
+	* fixed FastJetInterfaceTool configuration
+	* tagged JetRec-01-02-58
+
+2012-06-11  delsart  <delsart@localhost>
+	* adding config for area 4-vects
+	* python/TrackSelectionForJets.py: parameter tuning
+
+	* tagged JetRec-01-02-56
+
+2012-06-11  seuster <seuster AT Cern.ch>
+	* CBNT removal
+	* tagged JetRec-01-02-55
+
+
+2012-06-11  delsart  <delsart@localhost>
+
+	* src/JetFastJetFinderTool.cxx : adding area 4-vect as optional
+	moment.
+	
+
+2012-05-31  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/TrackSelectionForJets.py : fix configuration so no ERROR
+	displayed when reading aod. Thanks Scott Snyder.
+	* tagged JetRec-01-02-53
+
+2012-05-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/TrackSelectionForJets.py : pTmin = 1GeV
+	* tagged JetRec-01-02-52	
+
+2012-05-28  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/TrackSelectionForJets.py : improved and reworked track
+	selection for jets
+	* added an option for ghost Association in jet getters.
+	* tagged JetRec-01-02-51
+
+2012-05-14  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* Remove CBNTAA algs
+	* tagged JetRec-01-02-50
+	
+
+2012-05-03  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* share/RDOtoESD_Jets.py: added to allow propagation of
+	Truth Pile-up jets from RDO to ESDs. Also adaptade
+	ESDtoAOD_jets.py to this.
+	* tagged JetRec-01-02-49
+
+2012-04-29  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetAlgConfiguration.py : adding a new option maxPt
+	(default to -1, meaning it is not active) 
+	* tagged JetRec-01-02-48
+
+2012-04-27  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* minor fixes related to  FastJetInterfaceTool
+	* tagged JetRec-01-02-47
+
+2012-04-04  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : change error message to warning before
+	raising JetGetterBadInput 
+	* tagged JetRec-01-02-46
+
+2012-04-03  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py (make_StandardJets): added 'disable'
+	keyword for ghost-tower (as with other jet algs). This prevents algo from running in D3P
+	making jobs
+	* tagged JetRec-01-02-45
+
+2012-04-02  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : implement config for 2012 (keep 0.6
+	jets, remove GCW moments, add GhostTower)
+	* JetGetters.py : reset quality from cells
+	* tagged JetRec-01-02-44
+
+
+2012-03-23  Pierre-Antoine Delsart  <delsart@localhost>
+
+
+	* python/JetGetters.py (getStandardBTaggerTool): using a dedicated
+	tool from BTaggingConfig
+	* tagged JetRec-01-02-43
+
+2012-03-20 J Tseng
+	* python/JetCalibrationConfig.py : add IBL/SLHC geometry tags
+	* tagged JetRec-01-02-42
+
+
+
+2012-03-12  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py :switch off VoronoiArea moment since it
+	causes some crashes. 
+	* tagged JetRec-01-02-41
+	
+2012-03-09  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py: removing yflip moments, adding VoronoiArea
+	* tagged JetRec-01-02-40
+	
+	* python/JetGetters.py : quality variables computed from clusters
+
+
+	* tagged JetRec-01-02-39
+
+2012-02-27  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* src/JetRemoveConstituents.cxx : add option to allow 0
+	constituents in resulting jets.
+	* use above option so Tower AOD jets have no more links to ESD
+	(avoids some circular dependency found by Scott Snyder)
+	* tagged JetRec-01-02-38
+	
+2012-02-22  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRecFlags.py : more flags tuning for DB o.b.o Pavol
+	Striznec.
+	* tagged JetRec-01-02-37
+
+2012-02-20  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRecFlags.py: update DB folders o.b.o Pavol Striznec
+	* tagged JetRec-01-02-36
+
+2012-01-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRecFlags.py: new flags for DB usage. Thanks Pavol
+	Strizenec.
+	* tagged JetRec-01-02-35
+
+2011-12-23  Iftach Sadeh  <iftach.sadeh -AT- cern.ch>
+
+	* Added call in JetCaloQualityTool for two new jet moments which include
+	energy fraction of out-of-time energy based on cells or clusters
+	* tagged JetRec-01-02-34
+
+2011-12-22  Peter Loch <loch AT physics.arizona.edu>
+	* added FastJetInterfaceTool[.h,.cxx] wrapper to FastJet
+	* tagged JetRec-01-02-33
+
+2011-12-01  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py (getStandardPostProcessTool): do not
+	reschedule 'LC:CONST' as altenate moment if it's the main calib.
+	* tag JetRec-01-02-32
+
+2011-11-15  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* src/JetFastJetFinderTool.cxx (_execute): replace WARNING
+	caussing issue for trigger (see savannah 85586)
+	* tag JetRec-01-02-31
+	
+2011-09-03  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* improve config, not using hard coded index to retrieve calib
+	tools
+	* tag JetRec-01-02-30	
+
+
+2011-08-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetterBase.py : fix potential Truth PU config bug
+	* tag JetRec-01-02-29	
+
+
+2011-07-13  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* adapt to change in DataVector::const_iterator
+	* tag JetRec-01-02-28
+
+	* python/JetGetterBase.py : truth jet config : GEN jobs now also
+	build and use TruthPArticle  
+	* tag JetRec-01-02-27
+	
+2011-07-07  Rolf Seuster <seuster@localhost>
+
+	* python/JetAlgConfiguration.py: raise pT threshold for final jets to 10 GeV/c^2
+	* tag JetRec-01-02-26
+
+2011-07-06  Rolf Seuster <seuster@localhost>
+
+	* python/JetRecFlags.py: raise pT threshold for final jets to 10 GeV/c^2
+	* tag JetRec-01-02-25
+
+2011-06-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetterBase.py : fix configuration for truth jets at
+	gen level
+	* tag JetRec-01-02-24	
+
+2011-05-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : Remove GCW collections for TopoJets
+	* tag JetRec-01-02-23	
+
+2011-05-28  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* cmt/requirements: fix checkreq warnings	
+	* tag JetRec-01-02-22	
+
+
+2011-05-27  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py (getStandardBTaggerTool): adding option
+	o.b.o btag experts.
+	* tag JetRec-01-02-21	
+
+2011-05-02  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* previous JetRec-01-02-19-XX tags were actually not in a branch
+	(see det
+	* Also re-enable TopoJets wrongly disabled in trunk earlier.
+	* tag JetRec-01-02-20
+	
+2011-05-01  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : removed forced addStreaAOD/ESD for 
+	pile-up jet. (don't remeber why they are here...)
+	* tag JetRec-01-02-19-03	
+
+2011-04-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* Adapted truth jets to new TruthParticle and pile-up.
+	* tag JetRec-01-02-19-02
+
+2011-04-19  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : removing GCW collection from
+	standard reco
+	* tag JetRec-01-02-19-01
+
+2011-04-12  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* share/ESDtoAOD_Jets.py (fixAODTowerJets): remove duplicated
+	TowerAOD moment map and collections.
+	* tag JetRec-01-02-19 
+
+2011-04-05  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : reworked some alternate calibration saved
+	as jet moment.
+	* TopoEMJets do not have OFFSET correction by default anymore
+	* tag JetRec-01-02-18
+
+2011-04-01  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py  : moved NumTowerInJetTool earlier in the
+	tool list.
+	* tag JetRec-01-02-17
+	
+2011-03-28  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : moved JetBadChanCorrTool config in
+	JetMomentTools/
+	* tag JetRec-01-02-16
+
+2011-02-27  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py (getStandardPostProcessTool): now using
+	config in JetMomentTools for JetVertexAssociationTool
+	needs JetMomentTools-00-00-26
+	* tag JetRec-01-02-15
+	
+2011-02-10  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : do not schedule LArHV moment when
+	online. fixes a crash seen at p1
+	* tag JetRec-01-02-14
+	
+
+2011-02-02  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetGetters.py : minor improvements.
+	* tag JetRec-01-02-13	
+
+2011-01-22  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py: more protection against absent InDet
+	and tools removing. No tag
+
+
+2011-01-19  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : adding  CONST based calib for LCTopo jets
+	as jet moment in default reco.
+	* tag JetRec-01-02-12
+
+
+2011-01-12  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetCopyTool: add InputCalibState property.
+	* tag JetRec-01-02-11
+	
+2010-12-15  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/: fix bug introduced previously
+	* tag JetRec-01-02-10
+	
+	* python : improve configuration. User given tool
+	list default to [] rather than None. precalibTools can be modified
+	by calibTools calib functions.
+	* tag JetRec-01-02-09
+
+2010-12-02  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : adapted configuration of
+	JetBadChanCorrTool o.b.o Yousuke Kataoka
+	* tag JetRec-01-02-08
+	
+	* python/JetGetters.py : check also in transient for input
+	CaloTopoCluster
+	* tag JetRec-01-02-07
+
+2010-11-26  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetFastJetPluginCMSCone: re-introducing this plugin in the
+	trunk.
+	* tag JetRec-01-02-06	
+
+2010-11-15  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* Big changes.
+	* Adapt to suppression of JetMomentMapManager
+	* Merge back latest calibrations from trunk
+	* tag JetRec-01-02-05
+
+2010-10-20 Rolf Seuster <seuster AT cern.ch>
+	* for 16.0.2.1, the reprocessing, remove CMSCone to be able to revert back to AtlasFastJet -18
+	* tag JetRec-01-02-04-21
+
+2010-10-12  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : improvement over last tag. 
+	* tag JetRec-01-02-04-20
+	
+2010-10-11  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py: adapt to latest calib scheme
+	* tag JetRec-01-02-04-19 (-18 corrected a typo)
+
+2010-10-06  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetFinderConfig.py: forgot to add this file.
+	* tag JetRec-01-02-04-17
+	
+2010-10-05  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* Corrected FastJet plugin tools. Added CMSCone. Updated config
+	* tag JetRec-01-02-04-16
+
+2010-10-02  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : tag  JetRec-01-02-04-13 introduced a
+	bug : jet algs were setup, ignoring the disable=True option. Fixed.
+	* tag JetRec-01-02-04-15
+	
+2010-10-01  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* src/JetGlobalEventSetup.cxx (handle): INFO -> DEBUG statement
+	* tag JetRec-01-02-04-14
+	
+2010-09-30  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetRec_defaults.py : add 2 new collection (AntiKt4/6TopoEMJets)
+	* tag JetRec-01-02-04-13	
+
+	* share/ESDtoAOD_Jets.py : fix towerjet AOD name.
+	* tag JetRec-01-02-04-12
+
+2010-09-22  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : adds NegativeE and QualityHEC moment by
+	default.
+	* tag JetRec-01-02-04-11
+
+2010-09-21  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py : correct for LCTopo not found at correct
+	scale.
+	* Better protect against missing clusters in input files.
+	* tag JetRec-01-02-04-10
+
+2010-09-20  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetGlobalEventSetup.cxx  : converted INFO -> DEBUG
+
+2010-09-19  Pierre-Antoine Delsart  <delsart@localhost>
+	* add ParticleJetCompatibility to ESDtoAOD_Jets.py
+	* tag JetRec-01-02-04-09
+
+2010-09-19  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* share/ESDtoAOD_Jets.py : read also objKeyStore["inputFile"] for
+	jet collection to be transferred to AOD. (re-worked solution below)
+	(complete the tag below with JetMomentMap )
+
+
+	* tag JetRec-01-02-04-08	
+
+2010-09-17  David Rousseau  <droussea@lxbuild084.cern.ch>
+
+	* share/ESDtoAOD_Jets.py : obo rolf fix, was not finding the collections 
+	tag JetRec-01-02-04-06
+
+
+
+2010-09-15  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* bugs found by Scott :
+	* src/JetGlobalEventSetup.cxx: handle event at 'StoreCleared'	
+
+	* python/JetGetterBase.py : fix checkExistingOutput() (was at the
+	wrong place)	
+	* tag JetRec-01-02-04-05
+
+
+2009-09-01 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Set-up defaults for Vertex Correction
+	* tag JetRec-01-02-02
+
+2009-08-27  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+	* New EDM
+	* tag JetRec-01-01-58-19
+
+2009-08-13  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Added LAr bad region moment obo Louis Helary
+	* Fix a bug in vertex correction: Now uses primary vertex
+	* tag JetRec-01-01-93
+
+2010-07-14  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* JetGetter : re-write config for truth jets.
+	* fix pbm with pile-up jets. But turned-off constituents saving.
+	* tag JetRec-01-01-92
+
+2010-05-18  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* share/JetRec_jobOptions.py: fix typo
+	* tag JetRec-01-01-91
+
+2010-05-17  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* share/JetRec_jobOptions.py: include a protection
+	* tag JetRec-01-01-90
+
+	* JetRec-01-01-89 included config improvement o.bo Scott S.
+
+2009-04-29  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* First attempt at TruthJets with Non-Interacting particles
+	* Bugfix for VertexCorrection when ID is off - use BeamSpot!
+	* tag JetRec-01-01-88
+	
+2009-04-21  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Use Snowmass scheme by default
+	* tag JetRec-01-01-87
+
+2010-04-19  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* Adding JetSignalStateEqualizer : JetAlgTool eqalizes FINAL to
+	other state or replaces FINAL by FINAL/mom where mom is a Jet
+	Moment existing in the jet being processed.
+	* tag JetRec-01-01-86
+	
+
+2009-04-18  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Merge with -84-branch
+	* Introduce new collections for first analysis
+	* Set choice of moments for first analysis
+	* tag JetRec-01-01-85
+	
+2009-04-07  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Add an extra check for LCTopoJets
+	* Allow precalibTools
+	* Vertex correction by default & LAr Timing
+        * tag JetRec-01-01-84-01 & JetRec-01-01-84-02 & JetRec-01-01-84-03
+
+2009-03-29  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Fix configuration problem with JVF
+        * tag JetRec-01-01-84 
+
+2009-03-28  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Clean-up configuration using getCellWeightTool function
+        * tag JetRec-01-01-83 
+
+2009-03-26  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Fix syntax error in check for JVF, improve config for TimeQuality
+        * tag JetRec-01-01-82
+
+2009-03-23  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Add a check for beamType when setting up JVF
+        * tag JetRec-01-01-81
+	
+2009-03-22  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Add JetTimeQualityTool to the standard algorithms
+        * tag JetRec-01-01-80
+
+2009-03-18  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Separated treatment of moments in configuration
+	* Minor fixes / clean-up
+        * tag JetRec-01-01-79
+
+2009-03-03  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Run BadChannel by default, small fix to n90
+        * tag JetRec-01-01-78
+
+2010-02-24  David Quarrie <David.Quarrie@cern.ch>
+
+	* src/CoreSubJetsTool.cxx: Use std:isnan instead of isnan for MacOSX compatibility
+	* tag JetRec-01-01-77
+
+2010-02-22  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* CoreSubJetsTool.h: adding coresubjet o.b.o Adam Davison
+	* tag JetRec-01-01-76
+
+2009-02-15  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Don't run EMJES for TruthJets!!
+        * tag JetRec-01-01-75
+
+2009-02-15  Rolf Seuster <seuster AT cern.ch>
+        * disabling RTT, and removing xml file.
+        * tag JetRec-01-01-74
+
+2009-02-10  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Fixed a problem in FastKtUtils obo Scott Snyder
+        * tag JetRec-01-01-73
+
+2009-02-09  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * n90 moment is now included by default
+	* The other quality moments can be accessed via addJetQualityMoments
+	* New flag in Standard Getters:
+	  * GCWScheme: Scheme used for Cell Weighting
+	* tag JetRec-01-01-72
+
+2010-02-01  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py (getStandardBTaggerTool): fix indentation
+	pbm o.b.o J.B DeVivie.
+	* tag JetRec-01-01-71
+
+2009-01-10  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Improvements for dESD production:
+	* New flags in Standard Getters:
+	  * minPt: Now controls the minimum pT cut
+	  * doEMCut: Controls whether pT cut is at EM or FINAL scale
+	  * addJetQualityMoments: adds n90, badchan and badcell moments
+	* tag JetRec-01-01-70
+	
+2009-01-10  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Fixed a problem with GhostTowerJets
+        * tag JetRec-01-01-69
+
+2009-01-06  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Add the possibility to include the negative energy rescaling
+	  factor as a jet moment when using GhostTowerJet - on by default
+	  when using replaceNegEnergy
+	* Use safe constituent iterator, and protect against negative
+	  energies giving unphysical values for jet moments
+	* JetEccentricityTool and LowEtConstituents moments have been changed
+	* tag JetRec-01-01-68
+	
+
+2009-12-17  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py :  add protection to prevent
+	JetVertexAssociationTool from running if no ID.
+	* tag JetRec-01-01-67
+
+2009-12-15  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* Addapting to use CaloRec version of TopoTowers when building 
+	TowerJets
+	* tag JetRec-01-01-66
+
+
+2009-12-11  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* python/JetGetters.py (getStandardPostProcessTool): do not
+	configure JetVertexAssociationTool for truth jets
+	* tag JetRec-01-01-65
+
+2009-12-03  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Change in ESDtoAOD to account for custom Truth/Tower jet
+	  collection names
+
+2009-12-07  Pierre-Antoine Delsart  <delsart@localhost.localdomain>	
+
+	* JetGetters.py (getStandardInputTools): made the default input
+	cut being exactly : E>0 
+	* fix JetInpuTool configuratio for H1Topo jets
+	* tag JetRec-01-01-58-08
+	
+2009-12-03  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* adding JetInputWithSelectorTool
+	* tag JetRec-01-01-58-07
+	
+2009-12-02  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* merged from trunk at 217046
+	$AT
+	
+2009-12-02  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Add a new jet flag which enables JVF to be turned off obo Rolf
+	  Useful when only calo information is available
+	* tag JetRec-01-01-64
+
+
+2009-11-30  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* python/CBNTJets.py (schedule_CBNTJets_fromInputFile): fix config
+	bug 59792
+	* tag JetRec-01-01-63
+
+2009-11-29  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* JetGetters.py (getStandardPostProcessTool): adding a default
+	moment : JetVertexAssociationTool
+	* tag JetRec-01-01-62
+
+2009-11-26  Pier-Olivier DeViveiros  < viveiros AT physics.utoronto.ca >
+	* Fix JetGetters such that JetRec configuration does not fail
+	* Note: Will need to clean-up JetGetters functions
+	* tag JetRec-01-01-58-06
+	
+2009-11-25  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* Moved IJet* to JetInterface
+
+	* removing/moving old tools : JetSeedLessConeTool.h
+	JetFastKtFinderTool.h ...etc
+	*tag JetRec-01-01-58-05
+	
+2009-11-23  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * src/CBNTAA_JetTool.cxx : Size uses constituentsN now
+        * tag JetRec-01-01-61
+
+2009-11-21  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* JetRec/JetInputTool.h : add some virtual function for more
+	flexibility.
+	* tag JetRec-01-01-58-04
+
+2009-11-20  Pierre-Antoine Delsart  <delsart@localhost.localdomain>
+
+	* src/CBNTAA_JetTool.cxx : fix some compilation failure
+	* tag JetRec-01-01-58-03
+
+2009-11-16  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Change JetInputTool to accommodate SignalStates in input
+	* Use JetInputTool as a default for all algorithms
+	* Ensure that JetAlgorithm writes the constituent Signal State
+	* Rename ForceJetCopy for clarity, and use as part of JetAlgConfiguration
+	* tag JetRec-01-01-58-02
+
+2009-11-10  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* src/CBNTAA_JetTool.cxx : Protection when no Emf tool is specified
+	* tag JetRec-01-01-60
+	
+2009-11-10  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* src/CBNTAA_JetTool.cxx : Protection when no Emf tool is specified
+	* tag JetRec-01-01-60
+	
+2009-10-15  Pierre-Antoine Delsart  <delsart@localhost.in2p3.fr>
+
+	* src/JetFinderToolBase.cxx (execute): declare JetAlgTool interface
+	* tag JetRec-01-01-59
+
+2009-10-15  Pierre-Antoine Delsart  <delsart@localhost.in2p3.fr>
+
+	* src/JetFinderToolBase.cxx (execute): declare JetAlgTool interface
+	* tag JetRec-01-01-59
+
+2009-10-14  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* python/ParticleJetCompatibility.py: fixes o.bo. Scott S.
+	* JetAlgConfiguration : moved utils functions here
+
+2009-10-14  Pierre-Antoine Delsart  <delsart At in2p3.fr>
+
+	* python/ParticleJetCompatibility.py: fixes o.bo. Scott S.
+	* JetAlgConfiguration : moved utils functions here
+
+2009-10-12  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Fix to Negative Energy Constituents in jets.  Do not use 
+	weights anymore
+
+
+2009-10-12  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Fix to Negative Energy Constituents in jets.  Do not use 
+	weights anymore
+
+
+2009-09-17  Pierre-Antoine Delsart  <delsart At lps umontreal.ca>
+
+	* using FourMomUtils/P4Helpers.h header
+
+2009-09-11  Pierre-Antoine Delsart  <delsart@localhost.in2p3.fr>
+
+	* src/JetSplitMergeTool.cxx: fixed a bug producing void jets (0 energy, 0 constit) in some splitting cases.
+	* tag JetRec-01-01-58
+
+2009-08-28  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Jet Initial and Final cuts applied are now > instead of >=
+	  and use the Pt quantity instead of Et
+	  Note that this required changes in JetSignalSelector to choose
+	  a different JetSelector ("Exclusive Selector")
+	* Remove YSplitter from tool list because of reported crashes.
+	  Will be re-introduced later using the FastJet package
+        * tag JetRec-01-01-57
+
+2009-08-27  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Merged with JetRec-01-01-52-branch to fix pileup jet troubles
+	* tag JetRec-01-01-56
+
+2009-08-??  Brian Martin
+        * FastJet Fixes
+	* tag JetRec-01-01-55	
+	
+2009-07-23  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Protection against incorrect B-Tagging set-up
+	* tag JetRec-01-01-54
+
+2009-07-21  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * ParticleJetCompatibility: Add fix for AntiKt TowerJets in AOD
+	* tag JetRec-01-01-53
+
+2009-07-03  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * JetGetters.py: Add the option to include negative energy
+	  constituents in the jet finding
+	* Make the negative energy input constituents global (not
+	  specific to towers anymore) and move from JetRecTools
+	  to JetRec
+	
+2009-06-18  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * JetGetters.py: InputCollection for TopoTower and Y-Splitter for kT Jets
+        * tag JetRec-01-01-52
+	
+2009-06-17  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Minor bugfix: When overriding output collection name, the getter
+	  now takes that name
+        * tag JetRec-01-01-51
+
+2009-06-15  Pierre-Antoine Delsart  <delsart@localhost.cern.ch>
+
+	* python/ : more config options 
+	* tag JetRec-01-01-50
+
+2009-06-14  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Improvements to configuration
+	* AntiKt Jets in AOD/ESD by default
+        * tag JetRec-01-01-49
+
+2009-06-11  Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Undo changes in CBNTJets.py introduced in JetRec-01-01-43
+        * tag JetRec-01-01-48
+
+2009-06-08  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* src/JetRemoveConstituents.cxx : reset Jet::m_constituentsN correctly
+	* imporved configuration (merging of branch JetRec-01-01-44-branch)
+	* tag JetRec-01-01-47
+
+
+2009-06-06  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetMomentGetter.py (make_JetMomentGetter): improve JetMomentGetter
+	* tag JetRec-01-01-45
+
+2009-06-02 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* share/ESDtoAOD_Jets.py: Fix bug with SetSignalState changing
+	  packages.
+	* tag JetRec-01-01-44  
+	
+2009-05-21 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Added JetEccentricityTool for Ben Smith
+	* share/ESDtoAOD_Jets.py: Never fix Pileup Truth Jets
+	* python/CBNTJets.py: Attach JetTruthEMFractionTool if input is Truth
+	* src/CBNTAA_JetTool.cxx: In case no Emf Tool is attached, don't book branch
+	  Under the current configuration, this should never happen.
+	* tag JetRec-01-01-43
+
+2009-05-18  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* !! Support of H1clusters as input !!
+	* JetSplitMergeTool, JetAlgTool : fixed nasty bugs related to use
+	of complex configuration (signal state of constituents)
+	* addapted python config.
+	* moved JetSetCalibStateTool to JetRecTools
+	* tag JetRec-01-01-42
+
+2009-05-16  Pierre-Antoine Delsart  <delsart At lps umontreal.ca>
+
+	* JetRec/LowEtConstituentsFracTool.h: forgot to cvs add
+	* tag JetRec-01-01-41
+
+2009-05-12 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * ESDtoAOD_Jets.py: Look at transient store instead of inputFile
+	  in order to prevent differences in AODs produced from RDOs or ESDs.
+        * tag JetRec-01-01-39
+
+2009-05-12  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* LowEtConstituentsFracTool : adding a new JetMomentTOol
+	* tag JetRec-01-01-40
+
+2009-05-11  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* python/JetGetters.py: Using the H1Calibration from CaloClusterCorrection
+	* tag JetRec-01-01-38
+
+2009-05-04  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetSetCalibStateTool : rewrite. Adding functionnality to restore the Calibrated scale
+	from the constituents CALIBRATED scale.
+	* tag JetRec-01-01-36
+
+2009-05-03  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetGetters : getStandardCalibTool : added some option
+	* tag JetRec-01-01-35
+
+2009-04-29 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * JetRec_jobOptions.py: Persistify AOD Tower Jet constituents
+	* JetRemoveConstituents: Remove Jet Constituents by hand to address an issue
+        * tag JetRec-01-01-34
+
+2009-04-23 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * New AOD Tower Jet fix: AOD tower jets are now held in the TowerAODJets
+	  containers.  The jets have their constituent links removed and replaced
+	  with a link to the original ESD jet.
+	* Changes in ParticleJetCompatibility so that the TowerAODJets can be called
+	  with the same key as in the ESD
+	* Added JetRemoveConstituents tool
+        * tag JetRec-01-01-33
+
+2009-04-16  David Rousseau  <droussea@lxbuild084.cern.ch>
+
+	* share/ESDtoAOD_Jets.py (fixAODTruthJets) : do not "fix" pileup
+	truth jet 
+	* tag JetRec-01-01-32
+	
+2009-04-06  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetters.py : Now using the MCNumInversionResponse tool to apply H1 calib scale factor
+	* tag JetRec-01-01-31
+
+2009-04-02  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetters.py : adding a new helper function for creating 	
+	a calibration JetAlgTool (i.e JetCalibrationTool) from a IJetCalibrator tool
+	* tag JetRec-01-01-30
+
+2009-03-30  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetters.py: H1WeightToolCSC12Generic is now a private tool of
+	JetCalibrationTool (see JetCalibTools-00-00-11)
+	* tag JetRec-01-01-29
+
+2009-03-24  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetterBase.py, JetRec_default.py: adding jets (including Pilep truth jets) 
+	also to StreamAOD+adding. + some config clean-up
+	* tag JetRec-01-01-28
+
+2009-03-11 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * python/JetGetters.py : Adapt to ToolHandle in H1Calibration
+        * tag JetRec-01-01-27
+
+2009-03-06 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * share/JetRec_jobOptions.py and share/ESDtoAOD_Jets.py
+	* fixes for fixing jets TruthJets and TowerJets on AOD
+        * tag JetRec-01-01-26
+
+2009-03-04 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * python/JetGetters.py : fix a minor python warning
+        * tag JetRec-01-01-25
+
+2009-02-26 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * python/JetGetters.py : Replaced old H1CellCalibration with new
+	  equivalent in JetCalibTools
+        * tag JetRec-01-01-24
+
+2009-02-18  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetMomentToolBase.cxx : fix some unchecked StatusCode.
+	* tag JetRec-01-01-23
+
+2009-02-11 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * python/JetGetters.py : Changed name of JetTruthParticleSelectorTool
+	  instance to prevent conflict with identical declaration in tracking
+        * tag JetRec-01-01-22
+
+2009-02-10 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Protected print statements in execute
+	* Removed StoreGate allocations where possible
+	* tag JetRec-01-01-21
+
+2009-02-06 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* Fixed checkreq warnings/errors
+	* tag JetRec-01-01-20
+
+2009-02-05 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Fixed Savannah Bug #46620
+	* Several inverted arguments in inheritance/function calls
+	  resulting in cloned tools...
+	* tag JetRec-01-01-19
+	
+2009-02-04 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Removed MsgStream declarations, Cleaned up Header includes
+	* https://twiki.cern.ch/twiki/bin/view/Atlas/ImprovingSoftware
+        * tag JetRec-01-01-17
+
+2009-02-04 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+        * Minor bugfix in requirements file
+	* tag JetRec-01-01-18
+	
+2009-02-03  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetters.py  small bug fix for latest changes: 
+	* tag JetRec-01-01-16
+
+2009-01-28  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetGetters.py (getStandardInputTools): added options to standard function to ease config
+	of trigger
+	* tag JetRec-01-01-15
+
+2009-01-22 Pier-Olivier DeViveiros <viveiros AT physics.utoronto.ca>
+	* python/JetGetters.py: Added JetWidth to post-processing tools
+	* tag JetRec-01-01-14
+
+
+2009-01-21  Rolf Seuster <seuster AT cern.ch>
+	* ESDtoAOD_Jets.py modifications for fixing AOD jets
+	* JetSpyAlgorithm: adding storeGate->transientSwap for AOD jet fixes
+	* tagging JetRec-01-01-13
+
+2009-01-19  Rolf Seuster <seuster AT cern.ch>
+	* JetFastJetPluginSISCone.h and JetFastJetPluginWrapperBase.cxx
+	* fixing two memleaks (one one-time and one per-event) [savannah #45990]
+	* tagging JetRec-01-01-12
+
+2009-01-14  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetCalibrationConfig.py, JetGetters.py  : added a function to
+	load once and only once the DB folders related to jets. (see bug #45408)
+	* tagging JetRec-01-01-11
+
+2008-12-16  Rolf Seuster <seuster AT cern.ch>
+	* adding new flag "doPostProcess"
+	* configure dummy emfraction tool for CBNT
+	* tagging JetRec-01-01-09
+
+2008-12-16  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* python/JetGetters.py : do not invoke tower getter if disable==true
+	                         import hadronic cell tool only if doing calibration
+	* JetKtFinderTool : add Durham alg. Thanks to TadaAki Isobe
+	* tagging JetRec-01-01-10 
+	
+2008-12-14  Pierre-Antoine Delsart  <delsart@lps1139x>
+
+	* JetRec_jobOptions : add protection if include of Btagging jobO fails.
+	* JetFastJetPluginSISCone : default constructor with overlap threshold at 0.75
+	* tagging JetRec-01-01-08
+
+2008-11-28  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* src/JetConeFinderTool.cxx : forgot an other occurence of the bug below :(
+	* tagging JetRec-01-01-07
+
+2008-11-26  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* src/JetConeFinderTool.cxx :  fix possible crash in DEBUG level (introduced in 2 previous tags)
+	* tagging JetRec-01-01-06
+
+2008-11-24  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* adapted everything to 3 signal states
+	* introduced JetFinderToolBase
+	* corrected jobO for cosmic runs. Proper use of scoping level.
+	* tagging JetRec-01-01-02
+
+2008-11-24 Iacopo Vivarelli <iacopo.vivarelli AT cern.ch>
+	* Changing the default H1 weights for ATLAS-GEO geometries
+	* tagging JetRec-01-01-03
+
+2008-11-20  Rolf Seuster <seuster AT cern.ch>
+	* removed second "doCalib" from make_StandardJetGetter() for scoping level = 4
+	* tagging JetRec-01-01-01
+
+2008-11-14  Rolf Seuster <seuster AT cern.ch>
+	* improvements for dealing with constituent's signal states
+	* tagging JetRec-01-01-00
+
+2008-11-13  Rolf Seuster <seuster AT cern.ch>
+	* fixes [44021] with Sebastien's fix
+	* tagging JetRec-01-00-63
+
+2008-11-07  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+
+	* python/JetRec_defaults.py, JetGetters.py: adapted SignaState tool to case when H1 calib is off.
+	set TopoJet to same scoping level as other jets because cluster *should* be made (+ clusters do not have scoping 
+	level yet).
+	* tagging JetRec-01-00-61
+	* typo fixed in JetRec-01-00-62
+
+2008-10-27  Rolf Seuster <seuster AT cern.ch>
+	* fixes and improvements to share/ESDtoAOD_Jets.py
+	* tagging JetRec-01-00-60
+
+2008-10-26  Rolf Seuster <seuster AT cern.ch>
+	* add new python jobOptions share/ESDtoAOD_Jets.py
+	*  this contains fixes for ESD to AOD jets
+	*  for truth jets and for tower jets
+	* tagging JetRec-01-00-58
+
+
+2008-10-23  Rolf Seuster <seuster AT cern.ch>
+	* few % speedup in JetAlgorithm (map -> vector)
+	* fix FPE in JetConeFinderTool was necessary due to bug fix in JetTowerNoiseTool:
+	*  Jet 4mom _not_ sum of 4mom of its towers (in case of negative towers)
+	* tagging JetRec-01-00-57
+	
+
+2008-10-15  Rolf Seuster <seuster AT cern.ch>
+	* call correct tool for SISCone Jetfinder
+	* tagging JetRec-01-00-56
+	
+2008-09-29  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* cmt/requirements: adding use statement for boost
+	* tagging JetRec-01-00-55
+
+2008-09-28  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetGetters.py (getStandardCalibTool): Fix a typo for siscone + add finder option
+	"AntiKt" and "CamKt"
+	* tagging JetRec-01-00-54
+
+2008-09-02 Iacopo Vivarelli <iacopo.vivarelli AT cern.ch>
+	* Introduced the JetCalibrationDBTag, and modified the JetCalibrationConfig file
+	* tag JetRec-01-00-51
+	
+
+2008-09-02  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* JetMomentToolBase.h : now inheriths & implemnts IJetAlgToolBase
+	Adapted constructors of concrete JetMomentToolBase classes.
+	Adding a configuration function in JetMomentGetter.py
+	* share/JetRec_jobOptions.py: removed 'doJetRec'
+	*  tagging JetRec-01-00-52
+	
+2008-08-22  Rolf Seuster <seuster AT cern.ch>
+	* python/JetCalibrationConfig.py: changed "ATLAS-CommNF" to "ATLAS-Comm"
+	* on behalf of trigger
+	* tagging JetRec-01-00-50
+	
+2008-08-22  Rolf Seuster <seuster AT cern.ch>
+	* obo Scott: speed improvements and avoid large defragmentation of memory
+	* in SplitMergeTool
+	* tagging JetRec-01-00-53
+	
+2008-08-19  Rolf Seuster <seuster AT cern.ch>
+	* src/JetInputTool.cxx (execute): make it a WARNING
+	* python/JetGetters.py : make new get functions for the FastJet finders
+	* make fastjet the default for Kt jets
+	* tagging JetRec-01-00-50
+	
+2008-08-04  Pierre-Antoine Delsart  <delsart At lps umontreal.ca>
+
+	* src/JetInputTool.cxx (execute): Change INFO message into DEBUG
+	* tag JetRec-01-00-49
+
+2008-08-01  Pierre-Antoine Delsart  <delsart At lps umontreal.ca>
+
+	* python/JetGetters.py : using BTaggingFlags for Electron/Muon/Photon keys.
+	On behalf of btag exparts
+	* tag JetRec-01-00-48
+	
+2008-07-30  David Quarrie <David.Quarrie@cern.ch>
+
+	* src/FastKtUtils.cxx: Replace isnan() by std::isnan() for MacOSX compatibility
+	* tag JetRec-01-00-47
+
+2008-07-27  Rolf Seuster <seuster AT cern.ch>
+	* don't run Cone7H1TopoJets in standard reco
+	* persitify _all_ jetcolls being produced (e.g. user upon request)
+	* calculate jet areas in SISCone and FastJet type jet finders (off by default)
+	* calculate flip values for SISCone and FastJet type jet finders (off by default)
+	* tag JetRec-01-00-46
+	
+2008-07-17  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetGetters.py: just doc update
+	* no tag
+
+2008-07-17  Rolf Seuster <seuster AT cern.ch>	
+	* python/JetRec_defaults.py:
+	* run only 6 jet algorithms:
+	*  "Cone4TruthJets", "Cone4H1TowerJets", "Cone4H1TopoJets",
+	*  "Cone7TruthJets", "Cone7H1TowerJets", "Cone7H1TopoJets"
+	* tag JetRec-01-00-44
+
+2008-07-17  Rolf Seuster <seuster AT cern.ch>
+	* JetRec/JetAlgToolBase.h: remove std::cout statements
+	* JetRec/JetAlgorithm.h, src/JetAlgorithm.cxx: implement new function setupJetKeyDescriptor
+	* tag JetRec-01-00-45
+	
+2008-07-14  Rolf Seuster <seuster AT cern.ch>
+	* don't use selector for TruthJets in case of pileup
+	* tag JetRec-01-00-43
+
+2008-07-10  Rolf Seuster <seuster AT cern.ch>
+	* resurrect JetsFromTruthTool in case of pileup
+	*  the better solution including INav4MomColl will take some more time ...
+	* tag JetRec-01-00-42
+	
+2008-07-04  Rolf Seuster <seuster AT cern.ch>
+	* fixes to JetMomentCalculator
+	* tag JetRec-01-00-41
+
+2008-07-03  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetCalibrationConfig.py (_jetlog): added ATLAS-CommNF geommetry in H1 calibration
+	(using last constants set : calibdicV13)
+	* tag JetRec-01-00-40
+
+2008-06-26  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* JetRecFlags.py: added a flag to improve re-running of jet algorithms
+	* more doxygen
+	* tag JetRec-01-00-39
+
+2008-06-23  Rolf Seuster <seuster AT cern.ch>
+	* modified JetMomentCalculator to attach old JetMoments
+	*  to the local shape store (a.k.a. moment store)
+	* modified JetGetters.py and JetGetterBase.py to create
+	*  transparently truthjets from generators and from AOD
+	* tag JetRec-01-00-37
+	
+2008-06-23  Rolf Seuster <seuster AT cern.ch>
+	* persitify only 5 JetCollections in ESD:
+	*  "Cone4TruthJets", "Cone4H1TowerJets", "Cone4H1TopoJets",
+	*  "Cone7TruthJets", "Cone7H1TowerJets" 
+	* tag JetRec-01-00-38
+
+2008-06-22  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetGetters.py: more doxygen
+	* JetRec_jobOptions.py : setting up ParticleJetCompatibility if rec.readAOD()==True
+	* headers : more doxygen
+	* tag JetRec-01-00-36x
+
+2008-06-21  David Rousseau  <droussea@lxbuild084.cern.ch>
+
+	* share/ParticleJetCompatibility.py: from Sebastien : fix particleJetCompatibility
+
+2008-06-06  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/ParticleJetCompatibility.py : adding the equivalent of share/ParticleJetCompatibility.py
+	in pure pythonic way.
+	* tag JetRec-01-00-30
+
+2008-06-06  Rolf Seuster <seuster AT cern.ch>
+	* modified JetMomntCalculator to attach old JetMoments
+	*  to the local shape store (a.k.a. moment store)
+	* tagged JetRec-01-00-31
+	
+2008-06-03  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* share/JetRec_jobOptions.py: clean-up for bbtagging
+	* tag JetRec-01-00-29
+
+2008-06-01  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetGetterBase.py :  fix for truth jet in AOD
+	* tag JetRec-01-00-28
+
+	* share/ParticleJetCompatibility.py : new script for reading back ol ParticleJet class
+	* JetGetter.py : configuration simplification and improvement
+	* tag JetRec-01-00-27
+
+2008-05-30  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python/JetGetterBase.py : temporary fix for truth jets. Allow them to be configured in AtlasReconstruction only.
+	* tag JetRec-01-00-26
+
+2008-05-27  Pierre-Antoine DELSART  <delsart At lps umontreal.ca>
+
+	* python config : include fixes for AtlafastII from Michael Duehrssen 
+	* tag JetRec-01-00-25
+	
+2008-05-24  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* python/JetCalibrationConfig.py : Adapt for ATLAS-GEO det description
+	* tag JetRec-01-00-24
+
+2008-05-23  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* JetSetCalibStateTool : Set all jets state to CALIBRATED copying their 4mom
+	* add this tool to tool sequence for truth jet, so they are persistified correctly.
+	* introducing a new helper function for jet configuration (getStandardPostProcessTool)
+	* tag JetRec-01-00-23
+
+2008-05-22  Rolf Seuster <seuster AT cern.ch>
+        * bug fix : erased an extra joboption for a tool used during debugging
+	*           jetrec stopped the whole job.
+	* tagged JetRec-01-00-21
+
+2008-05-22  Rolf Seuster <seuster AT cern.ch>
+	* give proper name to TruthParticleContainer - for persistency
+	* tagged JetRec-01-00-22
+	
+2008-05-20  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+
+	* Introduce jetFlags.standardJetsFunction to ease configuration
+	* tag JetRec-01-00-18
+	
+
+2008-05-20  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+	
+	* Introduce Btagging JetTool from J.B. DeVivie
+	* JetESDList.py Remove JetTruthParticles 
+	* tag JetRec-01-00-19
+	
+2008-05-20  Rolf Seuster <seuster AT cern.ch>
+	* retired the JetsFromTruthTool
+	* run instead on TruthParticleCollection, created once
+	* tagged JetRec-01-00-20
+	* TODO: pile up
+	
+2008-05-19  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetterBase.py : fix typo
+	* tag JetRec-01-00-17
+	
+2008-05-16  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetter : fix TowerJet not disabled when asking jets with 
+	disable = True
+	* tag JetRec-01-00-16
+
+2008-05-15  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : now schedule JetEinSamplingTool for Calo jets
+	* Do not save JetTruthParticles anymore
+	* tagged JetRec-01-00-15
+
+2008-05-09  Rolf Seuster <seuster AT cern.ch>
+	* run TowerNoiseTool in own JetAlgorithm
+	* jetAlgs creating TowerJets then run on its output 
+	* tagged JetRec-01-00-14
+	
+2008-05-07  Iacopo Vivarelli <iacopo.vivarelli AT cern.ch>
+
+	* python/JetCalibrationConfig.py: fixing dictionary loading for geometries >= CSC-05  
+	* tagged JetRec-01-00-13
+
+2008-04-29  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* python/JetGetterBase.py : fixed typo ("JetKeyDescriptor")
+	* tagged JetRec-01-00-12
+	
+	* python/CBNTJets.py : fixed minor bug
+	* tagged JetRec-01-00-11	
+
+2008-04-28  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* JetGetterBase.py : improved options for truth jets.
+	* tagged JetRec-01-00-10
+
+2008-04-21  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* python/JetGetterBase.py: adding JetKeyDesriptor to objKeyStore
+	* tagged JetRec-01-00-09
+	
+2008-04-15  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* doc/mainpage.h: created.
+
+2008-04-14  Pierre-Antoine DELSART  <delsart>
+        * documetantion : added doxygen to JetTools
+        * tagged JetRec-01-00-08
+	
+2008-04-08  Pierre-Antoine DELSART  <delsart@lps.umontreal.ca>
+
+	* python : fixed typos
+	* tagged JetRec-01-00-06
+
+2008-04-08  Rolf Seuster <seuster AT cern.ch>
+	* split off data from JetKeyDecsriptor
+	* tagged JetRec-01-00-07
+	
+2008-03-31  Pierre-Antoine DELSART  <delsart lps.umontreal.ca>
+
+	* python/JetRecFlags.py JetGetters.py : improve configuration
+	* cleaned share/ : moved old jobO to old_jobOptions
+	* updated JetRec_jobOptions.py
+	* added Enabled and doBTagging to JetRecFlags.py
+	* tagged JetRec-01-00-05
+	
+
+2008-03-29  Rolf Seuster <seuster AT cern.ch>
+	* all new files for FastJet and friends were missing... adding again...
+	* tagged JetRec-01-00-04
+	
+2008-03-28  Rolf Seuster <seuster AT cern.ch>
+	* added wrappers for FastJet libraries and plugins
+	* available now are SISCone, FastJet, and
+	*  two CDF variants (caution, they might be slow! - commented out in the python configurable)
+	* tagged JetRec-01-00-03
+
+2008-02-20  Rolf Seuster <seuster AT cern.ch>
+	* jetAuthor now also filled by ConeFinder
+	* modifications for jetKeyDescriptor in JetAlgorithm
+	* tagged JetRec-01-00-02
+
+2008-02-15  Rolf Seuster <seuster AT cern.ch>
+	* added jetAuthor to JetAlgToolBase
+	*  to be filled by the jet algorithm (so far only FastKt)
+	* tagged JetRec-01-00-00
+
+2008-01-20  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetRecFlags.py: bug fix (Forgot to add some flags in the list of flags)
+	* JetRec-00-04-85
+
+2008-01-16  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/CBNTJets.py : using proper code for Jet detection when reading ESD.
+	* JetRec-00-04-84
+
+2008-01-14  Pierre-Antoine Delsart  <delsart@lapp_pad>
+
+	* python/* : cleaned an reorganized the configurables.
+	* made the jets sorted by Pt (and not Et)
+	* tagged JetRec-00-04-82
+	
+2008-01-09  Rolf Seuster <seuster AT cern.ch>
+	* memory leak (savanna bug #32465)
+	* fixed another leak in CBNTAA_JetCompositionTool
+	* tagged JetRec-00-04-81
+
+2007-12-11  Rolf Seuster <seuster AT cern.ch>
+	* small improvements in JetInputTool
+	* tagged JetRec-00-04-80
+
+2007-11-30  Rolf Seuster <seuster AT cern.ch>
+	* updated RTT jobOptions
+	* updated LegoPlot.C
+	* added JetMonitoring jobOptions (no confiurable yet)
+	* tagged JetRec-00-04-78
+	
+2007-11-30  Rolf Seuster <seuster AT cern.ch>
+	* added a selector to the JetInputTool
+	* default (none)
+	* tagged JetRec-00-04-79
+	
+2007-11-07  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+	
+	* python/JetGetters.py : fix when running evgen.
+	* tagged JetRec-00-04-77
+
+2007-10-24  Iacopo Vivarelli <iacopo.vivarelli AT cern.ch>
+	* Modified JetGetters.py to allow for all input, all algos cal 
+	constants for AtlfastII
+
+2007-10-22  Rolf Seuster <seuster@cern.ch>
+	* fixed memory leak in CBNTAA_JetTool (bug #30544) :
+	* new JetMomentMap for each event, not deleted
+	* tagged JetRec-00-04-75
+	
+2007-10-22  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetRecFlags.py: added to store JetRec flags.
+	* set doDetailedCBNT as 1st variable and using it in CBNT_Jets.py
+	*tagged JetRec-00-04-76
+
+2007-10-11 Adam Davison <adamd@hep.ucl.ac.uk>
+	* JetRec/YSplitter.h: Added doxygen documentation
+
+2007-10-03  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : fixed typo and replaced hack by standard calls
+	* added CBNTJet.py configurable.
+	* tagged JetRec-00-04-74
+
+2007-10-02 David Quarrie <David.Quarrie@cern.ch>
+	* JetRec/FastKtUtils.h: Remove redundant ";"
+
+2007-10-01 Iacopo Vivarelli <iacopo.vivarelli AT cern.ch>
+	* Modified JetGetters.py for new calibrations
+
+2007-09-28  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/CBNTJets.py : Fully configurable CBNT for jets
+	* python/JetRec_defaults.py : Set doLocalCalib = False by default (in default Reco these jets are 
+	not saved, so no need to run them ?)
+	* tagged JetRec-00-04-71
+
+2007-09-11  Rolf Seuster <seuster@cern.ch>
+	* bugfix for truth pileup events
+	* truth pileup jets were identical to normal truth jets (# 29467)
+	* tagged JetRec-00-04-70
+
+2007-08-26  Rolf Seuster <seuster@cern.ch>
+	* modified old style jobOptions for CBNTs (bug 29231)
+	* tagged JetRec-00-04-69
+
+2007-08-25  Rolf Seuster <seuster@cern.ch>
+	* added return statement to finalize in JetInputTool
+	* tagged JetRec-00-04-66
+
+2007-08-25  Rolf Seuster <seuster@cern.ch>
+	* modifications to JetSplitMergeTool to fix bug 29254
+	* valgrind reported "invalid read"
+	* tagged JetRec-00-04-68
+
+2007-08-23  Rolf Seuster <seuster@cern.ch>
+	* protect against crash in CBNTAA_JetCompositionTool
+	* restrict printout in JetInputTool
+	* tagged JetRec-00-04-64
+	
+2007-08-23  Rolf Seuster <seuster@cern.ch>
+	* typo in JetGetterBase in case of pile-up
+	* tagged JetRec-00-04-65
+
+2007-07-13  Rolf Seuster <seuster@cern.ch>
+	* removed CBNTAthenaAware flag from RTT jobOptions (2 tests stopped working)
+	* tagged JetRec-00-04-62
+	
+2007-07-13  Rolf Seuster <seuster@cern.ch>
+	* further improvements in RTT (root macro and jobOptions)
+	* tagged JetRec-00-04-63
+
+2007-07-09  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python : merged corrections for pile-up from 13.0.X branch  
+	* tagged JetRec-00-04-61
+	
+2007-07-08  Rolf Seuster <seuster@cern.ch>
+	* three new tests to RTT / 2x generator + ESD->CBNT
+	* tagged JetRec-00-04-60
+
+2007-06-18  Ketevi A. Assamagan <ketevi@bnl.gov>
+
+	* added job options for truth jet collections in pileup 
+	* (I did not do Configurables - better leave that the the JetRec gurus)
+	* tagged JetRec-00-04-57
+
+2007-06-14  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/*.py: properly invoke AlgSequence to retrieve topSequence
+	* tagged JetRec-00-04-56
+
+2007-06-11  Pierre-Antoine Delsart  <delsart@localhost>
+
+	* src/JetMomentCalculator.cxx : made list of MomentTool private
+	* updated configurable jobOs in python/ to new ToolHandle
+	* tagged JetRec-00-04-55
+	
+2007-06-09  Rolf Seuster <seuster@cern.ch>
+	* moved code to use ToolHandle (condfigurables)
+	* tagged JetRec-00-04-54
+
+2007-06-09  Rolf Seuster <seuster@cern.ch>
+	* bugfix in JetSelectorToolBase
+	* tagged JetRec-00-04-59
+	
+2007-05-23  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetterBase.py : added functionalities
+	* tagged JetRec-00-04-53
+
+2007-05-15  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : minor improvement
+	* tagged JetRec-00-04-52
+
+2007-05-14  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : When disabling option passed to make_StandardJetGetter, no tools 
+	are given to the jetAlg. This is a temporary fix
+	* tagged JetRec-00-04-51
+
+2007-05-12  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* _CBNT_jobOptions.py: changed to use new SG keys 
+	* tagged JetRec-00-04-50
+	
+
+2007-05-11  Rolf Seuster <seuster@cern.ch>
+	* added wrapper for the OjfJet package
+	* tagged JetRec-00-04-49
+	
+2007-05-02  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : added possibility to use oldnames to ease transition from old
+	style to configurable
+	* tagged JetRec-00-04-48
+
+2007-04-24  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetRec_defaults.py : the configurable equivalent of JetRec_jobOptions.py
+	* tagged JetRec-00-04-47 (fixed bug in -46)
+
+2007-04-18  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>	
+	* python/JetMomentGetter.py : corrected bugs
+	* configurables : H1 calibration now uses COOL tools by W. Lampl
+	* requirement : adding line to build the python modules
+	* tagged JetRec-00-04-44
+	
+2007-04-18  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+	* configurables : rechanged names to correct ones
+	* src/JetSorterTool.cxx corrected misleading debug statement
+	* tagged JetRec-00-04-45
+
+2007-04-11  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py: correcting typos
+
+2007-04-11  Rolf Seuster <seuster@cern.ch>
+	* added check for doTowerCalib in some CBNT jobOptions
+	* downgraded few ERRORs to WARNINGs 
+	* tagged JetRec-00-04-43
+
+2007-04-10  Rolf Seuster <seuster@cern.ch>
+	* mostly jobOptions
+	* tagged JetRec-00-04-42
+
+2007-04-09  Adam Davison  <adamd@hep.ucl.ac.uk>
+
+	* YSplitterTool.* : Fixed a bug & now does something more
+	sensible with jets with less than 5 constituents.
+
+2007-04-06  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* Configurable : all type of input are now working with new 
+	collection names . Added JetMomentGetter.py 
+	* tagged JetRec-00-04-41
+
+2007-04-04  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* FastKtJet : Re-worked code. Added Exclusive mode. IMPLY jobOptions changes
+	so options in Kt jobOptions files (and configuravble) have been changed
+	Also changed JetFastKtFinderTool accordingly.
+	* tagged JetRec-00-04-40
+
+2007-04-03  Rolf Seuster <seuster@cern.ch>
+	* cleanup jobOptions, added Navigation back into requirements
+	* tagged JetRec-00-04-38
+
+2007-04-03  Rolf Seuster <seuster@cern.ch>
+	* further cleanup of jobOptions, renamed Cone to Cone7
+	* tagged JetRec-00-04-39
+
+2007-03-27 Adam Davison <adamd@hep.ucl.ac.uk>
+	* YSplitter* : New jet moment tool, YSplitterTool to calculate
+	  y values for subjet scale studies.
+
+2007-03-26  Pierre-Antoine Delsart  <delsart@lps.umontreal.ca>
+
+	* python/JetGetters.py : added first try for configurable jobOptions
+
+2007-03-08 Pierre-Antoine Delsart   <delsart@prometheus.physics.mcgill.ca>
+	* FastKt* (FastKtJet): Added a 'reversed Kt' mode + some code clean-up
+	* tagged JetRec-00-04-36
+	
+2007-03-04  Rolf Seuster <seuster@cern.ch>
+	* many changes to CBNTAA and jobOptions
+	* tagged JetRec-00-04-35
+
+2007-02-20  Rolf Seuster <seuster@cern.ch>
+	* changes to enable JetRec RTT
+	* check statuscode
+	* tagged JetRec-00-04-34
+
+2007-01-14  Pierre-Antoine Delsart <delsart@lps.umontreal.ca>
+	* requirements : added 'use AthenaKernel' to fix a warning in NICOS due to 
+	a '#include "AthenaKernel/getMessageSvc.h"' in FastKtUtils.cxx
+	
+2007-01-12  Rolf Seuster <seuster@cern.ch>
+	* bug fixes for Kt4TopoJets
+	* tagged JetRec-00-04-30
+
+2007-01-12  Rolf Seuster <seuster@cern.ch>
+	* further bug fixes related to AANT and compilation errors in root when using MakeClass
+	* tagged JetRec-00-04-32
+	
+2007-01-12  Sven Menker <menke@mppmu.mpg.de>
+	* JetKtFinderTool.{cxx,h}: new properties "KtMode", "DCut"
+          and "NJets" to enable Kt jet finding in exclusive mode.
+	  In case KtMode is set to "ExclusiveD" the "DCut" property is
+	  used to set the cutoff (in energy-squared); 
+	  In case KtMode is set to "ExclusiveN" the "NJets" property is
+	  used to find exactly NJets jets. The default mode is "Inclusive"
+	  as before ...
+	* tagged JetRec-00-04-33
+	
+2007-01-10  Pierre-Antoine Delsart <delsart@lps.umontreal.ca>
+	* src/FastKtUtils.cxx : catching CLHEP exceptions comming from bad input vectors
+	
+2006-12-01  David Rousseau  <droussea@lxplus053.cern.ch>
+
+	* share/JetRec_jobOptions.py: only build towers if calocluster not done
+
+	* share/JetRec_CBNT_jobOptions.py: add JetRec DLL in case reading ESD
+	
+
+2006-11-30  Ambreesh Gupta  <agupta@lxplus058.cern.ch>
+
+	* Adding jobOption for 12.0.4 production
+	* tagged JetRec-00-04-24
+
+2006-11-30  Ambreesh Gupta  <agupta@lxplus003.cern.ch>
+
+	* Added combined jobOption for RecExCommon
+	* tagged JetRec-00-04-25
+
+2006-11-20 Peter Loch <loch@physics.arizona.edu>
+	* cmt/requirements: fixed use statements to remove checkreq warnings
+	* tagged JetRec-00-04-23 for 12.0.4/12.4.0
+
+2006-11-17  Rolf Seuster <seuster@cern.ch>
+	* further changes in root macro and xml file for RTT
+	* tagged JetRec-00-04-21
+
+2006-11-16 Peter Loch <loch@physics.arizona.edu>
+	* JetCompactnessFilterTool[.h,.cxx]: bug fixes in selection class
+	* src/JetHardnessFilterTool.cxx: bug fixes
+	* src/JetSelectorToolBase.cxx: bug fixes
+	* src/JetSignalSelectorTool.cxx: bug fixes
+	* share/Cone4CalibClusterJet_jobOptions.py: added new style job options
+	for testing
+	* share/Cone7CalibClusterJet_jobOptions.py: added new style job options
+	for testing
+	* share/Kt4CalibClusterJet_jobOptions.py: added new style job options
+	for testing
+	* share/Kt6CalibClusterJet_jobOptions.py: added new style job options
+	for testing
+	* tagged JetRec-00-04-19 for 12.0.4
+	
+2006-11-09 Peter Loch <loch@physics.arizona.edu>
+	* JetRec/JetAdaptorTool.h: added templated base class for input 
+	adaptors
+	* JetHardnessFilterTool[.h,.cxx]: added tool allowing selection of the
+	n hardest jets
+	* JetCompactnessFilterTool[.h,.cxx]: added tool to filter jets with
+	a compact core; possible configurations: use hardest constituent or
+	Pt contribution integrated within a given radius
+	* JetMatchFilterTool[.h,.cxx]: added tool finding jets matched with
+	other jets in a reference JetCollection
+	* src/JetAlgorithm.cxx: use JetUtils function to fill initial jet
+	collection
+	* JetRegionSelectorTool[.h,.cxx]: optimized selection application
+	* JetSignalSelectorTool[.h,.cxx]: optimized selection application
+
+
+2006-10-25  Rolf Seuster <seuster@cern.ch>
+	* changes in root macros for RTT
+	* tagged JetRec-00-04-16
+
+2006-10-23  Pierre-Antoine Delsart <delsart@lps.umontreal.ca>
+	* Added Aachen (aka Angular ordered) algorithm
+	* Code simplification and clean-up in FastKt*
+
+2006-10-20  Peter Loch <loch@physics.arizona.edu>
+	* share/JetJobConfig.py added, includes python classes 
+	JetDefaultConfiguration and JetJobConfiguration
+	* share/Kt6CalibCluster_jobOptions.py adapted to use JetJobConfig.py
+	* share/Kt4CalibCluster_jobOptions.py adapted to use JetJobConfig.py
+	* share/Cone7CalibCluster_jobOptions.py adapted to use JetJobConfig.py
+	* share/Cone4CalibCluster_jobOptions.py adapted to use JetJobConfig.py
+	* taggesd JetRec-00-04-14
+
+2006-10-17  Peter Loch <loch@physics.arizona.edu>
+	* CBNTAA_Jet[.h,.cxx]: added AthenaAware ntuple module for jets
+	* CBNTAA_JetTool[.h,.cxx]: added tool for module, fills CNBTAA with
+	the usual CBNT variables
+	* CBNTAA_JetToolBase[.h,.cxx]: added base class for CBNTAA jet ntuple
+	tools
+	* CBNTAA_JetCompositionTool[.h,.cxx]: added tool filling ntuples with
+	jet constituents
+	* JetDumperTool[.h,.cxx]: added tool writing simple ASCII file with
+	jet four-vectors
+	* JetInputTool[.h,.cxx]: added tool copying INavigable4Momentum typed
+	objects to Jet
+	* JetSpyAlgorithm[.h,.cxx]: added new jet algorithm which does not
+	copy jets or writes out a JetCollection.
+	* share/Cone7CalibClusterJets_jobOptions.py: added jO's for cone 7 jets
+	from calibrated CaloCluster
+	* share/Cone4CalibClusterJets_jobOptions.py: added jO's for cone 4 jets
+	from calibrated CaloCluster
+	* share/Kt4CalibClusterJets_jobOptions.py: added jO's for Kt jets 
+	(D=0.4) from calibrated CaloCluster
+	* share/Kt6CalibClusterJets_jobOptions.py: added jO's for Kt jets
+	(D=0.6) from calibrated CaloCluster
+	* JetAlgorithm[.h,.cxx]: improved printout mainly
+	* tagged JetRec-00-04-13	
+
+2006-09-20  David Rousseau  <droussea@lxplus065.cern.ch>
+
+	* src/JetDecompositionTool.cxx, JetSignalSelectorTool.cxx: if input jet collection is empty downgrade message from WARNING to DEBUG 
+
+2006-08-12 Rolf Seuster <seuster@cern.ch>
+	* added JetSorterTool
+	* changes due to checkreq warnings
+	* moved CBNT* to JetRecTools due to dependencies
+	* tagged JetRec-00-04-09
+	
+2006-07-31  David Quarrie <David.Quarrie@cern.ch>
+
+	* src/JetAlgorithm.cxx: use Jet::index_type for loop index
+
+2006-07-28  Pierre-Antoine Delsart  <delsart lps.umontreal.ca>
+	* share/Kt4TowerJet_jobOptions.py : fix indentation errors
+	* FastKt* : fix memory leak
+
+	
+2006-07-25  David Rousseau  <droussea@lxplus004.cern.ch>
+
+	* share/KtTowerJet_jobOptions.py, KtTruthJet_jobOptions.py: 
+	fix indentation errors
+2006-07-18 Rolf Seuster <seuster@cern.ch>
+	* added code for monitoring JetMoments
+	* tagged JetRec-00-00-01
+	
+2006-07-18 Rolf Seuster <seuster@cern.ch>
+	* added code for RTT
+	* clean up of jobOptions related to monitoring / RTT
+	* tagged JetRec-00-04-08
+
